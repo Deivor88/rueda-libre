@@ -1,0 +1,13 @@
+URL completa: http://localhost:3000/index.html (o la ruta correspondiente a tu entorno local)
+
+Protocolo: HTTP/1.1 o HTTP/2
+
+Host: localhost (o 127.0.0.1)
+
+Puerto: 3000 (varía según el servidor local que estés usando, por ejemplo, 80 o 8080)
+
+Ruta (Path): /index.html (o / si carga la raíz por defecto)
+
+Método de la petición: GET
+
+Código de estado (Status Code): 200 OK
