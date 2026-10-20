@@ -1,13 +1,48 @@
-URL completa: http://localhost:3000/index.html (o la ruta correspondiente a tu entorno local)
+4) URL completa: http://localhost:3000/index.html (o la ruta correspondiente a tu entorno local)
 
-Protocolo: HTTP/1.1 o HTTP/2
+Protocolo: HTTP
 
 Host: localhost (o 127.0.0.1)
 
-Puerto: 3000 (varía según el servidor local que estés usando, por ejemplo, 80 o 8080)
+Puerto: 5500
 
-Ruta (Path): /index.html (o / si carga la raíz por defecto)
+Ruta (Path): /index.html 
 
 Método de la petición: GET
 
-Código de estado (Status Code): 200 OK
+Código de estado (Status Code): 304
+
+------------------------------------------
+5) Ruta de prueba: /promociones.html
+
+Código que responde el servidor: 404 Not Found
+
+Qué significa: Significa que el servidor web se ha comunicado correctamente, pero el archivo o la ruta solicitada no existe en el directorio del servidor.
+------------------------------------------
+6) 
+HTML: Es la estructura y el esqueleto de la página web. Se encarga de definir el contenido básico, como los títulos, párrafos, listas de servicios, imágenes y formularios de contacto.
+
+<h1>Rueda Libre</h1>
+<ul>
+    <li>Alquiler de bicicletas por hora o por día</li>
+    <li>Rutas guiadas por la ciudad</li>
+</ul>
+
+CSS: Es el diseño, el estilo y la apariencia visual del sitio. Se encarga de darle personalidad a la marca (colores institucionales, tipografías, alineaciones y espacios), asegurando además que la página se vea atractiva y se adapte correctamente a celulares, tabletas y computadoras (diseño responsivo).
+
+body {
+    background-color: #0d3b44; /* Fondo azul oscuro corporativo */
+    color: #fffff0; /* Texto claro */
+    font-family: 'Arial', sans-serif;
+}
+h1 {
+    color: #f4d35e; /* Título en tono amarillo/crema destacado */
+    text-align: center;
+}
+JAVASCRIPT: Es la capa de interactividad y dinamismo. Permite que el sitio web reaccione a las acciones del usuario, como validar un formulario de reserva de bicicletas, abrir un menú desplegable en dispositivos móviles, mostrar un mapa interactivo con las rutas o calcular el costo total de un alquiler en tiempo real.
+
+function calcularCostoAlquiler(horas) {
+    const tarifaPorHora = 15000; // en pesos colombianos
+    let total = horas * tarifaPorHora;
+    return `El costo total por ${horas} horas es de $${total} COP`;
+}
