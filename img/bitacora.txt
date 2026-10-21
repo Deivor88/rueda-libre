@@ -46,3 +46,20 @@ function calcularCostoAlquiler(horas) {
     let total = horas * tarifaPorHora;
     return `El costo total por ${horas} horas es de $${total} COP`;
 }
+
+--------------------------------------------------------------------
+Esquema de las regiones de una página web
+
+    Encabezado (<header>): Define el encabezado superior de la página o de una sección específica. Suele contener el logotipo, título del sitio y lema o buscador.
+
+    Navegación (<nav>): Contiene el menú principal de enlaces que permiten al usuario moverse por el sitio web.
+
+    Contenido Principal (<main>): Representa el contenido central y único del documento. Solo debe haber un elemento <main> visible por página.
+
+    Secciones (<section>): Agrupa un conjunto de contenidos relacionados dentro de un tema específico (por ejemplo, servicios, testimonios, tarifas).
+
+    Artículos (<article>): Define un bloque de contenido independiente y autocontenido (por ejemplo, una publicación de blog, una noticia o una tarjeta de producto).
+
+    Contenido Complementario (<aside>): Contiene información secundaria o secundaria relacionada indirectamente con el contenido principal (por ejemplo, barra lateral, enlaces de interés, publicidad).
+
+    Pie (<footer>): Ubicado al final del documento o sección. Incluye información de copyright, enlaces a políticas, datos de contacto o mapas del sitio.

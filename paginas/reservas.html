@@ -18,11 +18,62 @@
         </nav>
     </header> 
     <main>  
+        <section id="reservas">
+            <h1>RESERVAS</h1>
+            <p>Realiza tu reserva de bicicletas de manera rápida y sencilla. Completa el formulario a continuación con tus datos y preferencias, y nuestro equipo se pondrá en contacto contigo para confirmar tu reserva y brindarte toda la información necesaria para disfrutar de tu experiencia sobre dos ruedas en Medellín.</p>
 
+            <!-- Grupo 1: Tus datos -->
+        <fieldset>
+            <legend>Tus datos</legend>
+            
+                <label for="nombre">Nombre completo:</label><br>
+                <input type="text" id="nombre" name="nombre" required>
+            <br>
+                <label for="email">Correo electrónico:</label><br>
+                <input type="email" id="email" name="email" required>
+            <br>
+                <label for="telefono">Teléfono:</label><br>
+                <input type="tel" id="telefono" name="telefono" required>
+        </fieldset>
+
+        <br>
+
+        <!-- Grupo 2: Tu alquiler -->
+        <fieldset>
+            <legend>Tu alquiler</legend>
+            
+                <label for="tipo_bici">Tipo de bicicleta:</label><br>
+                <select id="tipo_bici" name="tipo_bici" required>
+                    <option value="urbana">Bicicleta Urbana</option>
+                    <option value="montana">Bicicleta de Montaña</option>
+                    <option value="electrica">Bicicleta Eléctrica</option>
+                </select>
+            <br>
+                <label for="fecha">Fecha de reserva:</label><br>
+                <input type="date" id="fecha" name="fecha" required>
+            <br>
+                <label for="horas">Cantidad de horas:</label><br>
+                <input type="number" id="horas" name="horas" min="1" value="1" required>
+        </fieldset>
+
+        <br>
+
+        <!-- Grupo 3: Confirmación -->
+        <fieldset>
+            <legend>Confirmación</legend>
+            
+                <input type="checkbox" id="terminos" name="terminos" required>
+                <label for="terminos">Acepto los términos, condiciones y políticas de privacidad</label>
+            <br>
+                <button type="submit">Confirmar Alquiler</button>
+        </fieldset>
+
+    </form>
+        </section>
     </main>
     <footer id="contacto">
         <!-- Footer con el ID para el enlace interno -->
-        <h2>Encuéntranos</h2>
+        <h2>Contactanos</h2>
         <ul>
             <!-- Enlace de ubicación en el mapa -->
             <li>
@@ -44,6 +95,13 @@
                 </a>
             </li>
         </ul>
+         <!-- Horarios de atencion -->
+            <h3>Horarios de atención:</h3>
+            <ul>
+                <li>Lunes a viernes: 9:00 AM - 6:00 PM</li>
+                <li>Sábados: 10:00 AM - 4:00 PM</li>
+                <li>Domingos: Cerrado</li>
+            </ul>
 
         <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
     </footer>
