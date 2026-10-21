@@ -31,6 +31,9 @@
                         <label for="nombre">Nombre completo:</label><br>
                          <input type="text" id="nombre" name="nombre" required>
                         <br>
+                        <label for="documento">Número de documento:</label><br>
+                        <input type="text" id="documento" name="documento" required>
+                        <br>
                         <label for="email">Correo electrónico:</label><br>
                         <input type="email" id="email" name="email" required>
                         <br>
@@ -54,8 +57,15 @@
                         <label for="fecha">Fecha de reserva:</label><br>
                         <input type="date" id="fecha" name="fecha" required>
                         <br>
-                        <label for="horas">Cantidad de horas:</label><br>
-                        <input type="number" id="horas" name="horas" min="1" value="1" required>
+                        <label for="plan">Plan de alquiler:</label><br>
+                         <select id="plan" name="plan" required>
+                            <option value="hora">Alquiler por Hora</option>
+                            <option value="mediodia">Alquiler por Medio Día (4 horas)</option>
+                            <option value="dia">Alquiler por Día Completo</option>
+                        </select>
+                        <br>
+                        <label for="bicicletas">Cantidad de bicicletas:</label><br>
+                        <input type="number" id="bicicletas" name="bicicletas" min="1" value="1" required>
                 </fieldset>
 
                     <br>
