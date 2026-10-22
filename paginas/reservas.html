@@ -16,6 +16,7 @@
                 <li><a href="../paginas/reservas.html">Reservas</a></li>
             </ul>    
         </nav>
+        <h1>Rueda Libre</h1>
     </header> 
     <main>  
             <h1>RESERVAS</h1>
@@ -54,18 +55,32 @@
                             <option value="electrica">Bicicleta Eléctrica</option>
                         </select>
                         <br>
-                        <label for="fecha">Fecha de reserva:</label><br>
-                        <input type="date" id="fecha" name="fecha" required>
-                        <br>
-                        <label for="plan">Plan de alquiler:</label><br>
+                         <label for="plan">Plan de alquiler:</label><br>
                          <select id="plan" name="plan" required>
                             <option value="hora">Alquiler por Hora</option>
                             <option value="mediodia">Alquiler por Medio Día (4 horas)</option>
                             <option value="dia">Alquiler por Día Completo</option>
                         </select>
                         <br>
+                        <label for="recorrido">Recorrido:</label><br>
+                        <input type="radio" name="aceptarecorrido" id="aceptar" required>
+                        <label for="aceptar">Acepta recorrido</label><br>
+                        <input type="radio" name="aceptarecorrido" id="rechazar" required>
+                        <label for="rechazar">Rechaza recorrido</label><br>
+                        <label for="recorrido">Tipo de recorrido:</label><br>
+                         <select id="recorrido" name="recorrido" required>
+                            <option value="rio-y-parques12k">Río y Parques (12 km)</option>
+                            <option value="sabores-de-barrio">Sabores de Barrio</option>
+                            <option value="rio-y-parques25k">Río y Parques (25 km)</option>
+                            <option value="sin-recorrido">Sin recorrido</option>
+                        </select>
+                        <br>
                         <label for="bicicletas">Cantidad de bicicletas:</label><br>
                         <input type="number" id="bicicletas" name="bicicletas" min="1" value="1" required>
+                        <br>
+                        <label for="fecha">Fecha de reserva:</label><br>
+                        <input type="date" id="fecha" name="fecha" required>
+                        <br>
                 </fieldset>
 
                     <br>
