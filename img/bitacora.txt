@@ -63,3 +63,57 @@ Esquema de las regiones de una página web
     Contenido Complementario (<aside>): Contiene información secundaria o secundaria relacionada indirectamente con el contenido principal (por ejemplo, barra lateral, enlaces de interés, publicidad).
 
     Pie (<footer>): Ubicado al final del documento o sección. Incluye información de copyright, enlaces a políticas, datos de contacto o mapas del sitio.
+---------------------------------------------------------------------------
+===================================================================================
+
+                  REGISTRO DE PRUEBAS DE VALIDACIÓN NATIVA HTML
+
+                            PROYECTO: RUEDA LIBRE
+
+===================================================================================
+
+
+
+A continuación se detallan los casos de prueba ejecutados sobre las restricciones
+
+y validaciones nativas configuradas en los campos del formulario de reserva.
+
+
+
+-----------------------------------------------------------------------------------
+
+| #  | Campo                   | Dato de prueba         | Resultado esperado                                                        | Resultado obtenido                                                    |
+
+-----------------------------------------------------------------------------------
+
+| 1  | Nombre completo         | (Campo vacío)          | El navegador bloquea el envío y muestra aviso de campo obligatorio.       | Bloqueo nativo: "Completa este campo".                                |
+
+| 2  | Nombre completo         | "Lu" (2 caracteres)    | El navegador rechaza el envío por no cumplir el mínimo de caracteres.      | Bloqueo nativo: Longitud mínima de 3 caracteres no alcanzada.         |
+
+| 3  | Número de documento     | "12345a" (con letras)  | El navegador detecta que no cumple el patrón numérico estricto.           | Bloqueo nativo por coincidencia de patrón (pattern).                  |
+
+| 4  | Número de documento     | "12345" (5 dígitos)    | El navegador rechaza el envío por estar por debajo del límite mínimo.     | Bloqueo nativo: Longitud mínima de 6 dígitos no cumplida.             |
+
+| 5  | Correo electrónico      | "usuario.com" (sin @)  | El navegador detecta que el formato del correo es inválido.               | Bloqueo nativo: "Incluye un signo '@' en la dirección...".            |
+
+| 6  | Número de celular       | "2001234567" (inicia 2)| El navegador rechaza el envío porque no cumple la regla de inicio.        | Bloqueo nativo por fallo en la validación del patrón (^3...).         |
+
+| 7  | Número de celular       | "300123456" (9 dígitos) | El navegador rechaza el envío por estar incompleto.                       | Bloqueo nativo: Longitud exacta requerida de 10 caracteres no alcanzada|
+
+| 8  | Fecha del alquiler      | "2026-10-15" (Octubre)  | El navegador bloquea la fecha por estar fuera del rango mínimo permitido. | Bloqueo nativo: Fecha anterior al límite min (2026-11-01).            |
+
+| 9  | Cantidad de bicicletas  | "7" (mayor al límite)   | El navegador bloquea el envío por superar el valor máximo permitido.       | Bloqueo nativo: Valor superior al límite max (6).                      |
+
+| 10 | Políticas de alquiler   | (Sin marcar)           | El navegador impide enviar el formulario por ser un campo obligatorio.     | Bloqueo nativo: "Marca esta casilla si quieres continuar".             |
+
+-----------------------------------------------------------------------------------
+
+
+
+Resumen de resultados:
+
+- Total de pruebas ejecutadas: 10
+
+- Pruebas exitosas (bloqueo correcto): 10
+
+- Fallos detectados: 0

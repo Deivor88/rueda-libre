@@ -29,17 +29,16 @@
                 <fieldset>
                      <legend>Tus datos</legend>
             
-                        <label for="nombre">Nombre completo:</label><br>
-                         <input type="text" id="nombre" name="nombre" required>
+                        <label for="nombre">Nombre completo:</label><br><input type="text" id="nombre" name="nombre" required>
                         <br>
                         <label for="documento">Número de documento:</label><br>
-                        <input type="text" id="documento" name="documento" required>
+                        <input type="text" id="documento" name="documento" required inputmode="numeric" pattern="[0-9]{6,10}" placeholder="Ej: 123456789">
                         <br>
                         <label for="email">Correo electrónico:</label><br>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
                         <br>
                         <label for="telefono">Teléfono:</label><br>
-                         <input type="tel" id="telefono" name="telefono" required>
+                        <input type="tel" id="telefono" name="telefono" required inputmode="numeric" pattern="^3[0-9]{9}$" placeholder="Ej: 3123456789">
                 </fieldset>
 
                 <br>
@@ -76,20 +75,22 @@
                         </select>
                         <br>
                         <label for="bicicletas">Cantidad de bicicletas:</label><br>
-                        <input type="number" id="bicicletas" name="bicicletas" min="1" value="1" required>
+                        <input type="number" id="bicicletas" name="bicicletas" min="1" max="6" value="1" required>
                         <br>
                         <label for="fecha">Fecha de reserva:</label><br>
-                        <input type="date" id="fecha" name="fecha" required>
+                        <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-11-31">
                         <br>
                 </fieldset>
 
                     <br>
 
                 <!-- Grupo 3: Confirmación -->
+                 
                 <fieldset>
                     <legend>Confirmación</legend>
-            
-                        <input type="checkbox" id="terminos" name="terminos" required>
+                        <textarea name="comentarios" id="comentarios" rows="4" cols="50" maxlength="300" placeholder="Comentarios adicionales (opcional)"></textarea>
+                        <br>                 
+                        <input type="checkbox" id="terminos" name="terminos" required checked>
                         <label for="terminos">Acepto los términos, condiciones y políticas de privacidad</label>
                         <br>
                         <button type="submit">Confirmar Alquiler</button>
