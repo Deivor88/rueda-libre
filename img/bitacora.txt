@@ -117,3 +117,235 @@ Resumen de resultados:
 - Pruebas exitosas (bloqueo correcto): 10
 
 - Fallos detectados: 0
+----------------------------------------------------------------------------------
+Auditar y corregir la accesibilidad del sitio:
+- Se realiza la correccion del lang="es-CO" el cual se encontraba en ingles
+- Se revisa la jerarquía de encabezados los cuales s e encuentran correctos, solo se corrige en el archivo de reservas y en tarifas el cual contenoia dos <h1>
+- No se encuentran textos de enlace que no se entiendan o esten fuera de contexto
+===================================================================================
+
+                  INFORME DE AUDITORÍA DE CONTRASTE DE COLOR (WCAG)
+
+                            PROYECTO: RUEDA LIBRE
+
+===================================================================================
+
+
+
+CÓDIGOS HEXADECIMALES DE LA PALETA
+
+----------------------------------
+
+- Verde Ruta:    #1E7A4F
+
+- Naranja Pedal: #F39A2B
+
+- Azul Noche:    #14213D
+
+- Crema:         #FAF6EF
+
+- Gris Asfalto:  #5B6470
+
+- Blanco:        #FFFFFF
+
+
+
+
+
+TABLA DE EVALUACIÓN DE CONTRASTE
+
+-----------------------------------------------------------------------------------
+
+| # | Combinación Evaluada                     | Ratio | Nivel AA | Nivel AAA |
+
+-----------------------------------------------------------------------------------
+
+| 1 | Texto Blanco sobre Verde Ruta            | 5.24:1| APROBADO | REPROBADO |
+
+| 2 | Texto Blanco sobre Naranja Pedal         | 2.19:1| REPROBADO| REPROBADO |
+
+| 3 | Texto Azul Noche sobre Naranja Pedal     | 7.29:1| APROBADO | APROBADO  |
+
+| 4 | Texto Azul Noche sobre Crema             |14.73:1| APROBADO | APROBADO  |
+
+| 5 | Texto Gris Asfalto sobre Crema           | 5.37:1| APROBADO | REPROBADO |
+
+| 6 | Texto Verde Ruta sobre Crema             | 4.84:1| APROBADO | REPROBADO |
+
+| 7 | Texto Naranja Pedal sobre Crema          | 2.02:1| REPROBADO| REPROBADO |
+
+| 8 | Texto Blanco sobre Azul Noche            |15.96:1| APROBADO | APROBADO  |
+
+-----------------------------------------------------------------------------------
+
+
+
+* Criterios WCAG 2.1 para Texto Normal:
+
+  - Nivel AA: Requiere un ratio mínimo de 4.5:1
+
+  - Nivel AAA: Requiere un ratio mínimo de 7.0:1
+
+
+
+
+
+RECOMENDACIONES DE DISEÑO Y USO DE COLORES
+
+------------------------------------------
+
+1. Cuerpos de Texto Principal:
+
+   - Utilizar Azul Noche (#14213D) sobre fondo Crema (#FAF6EF) para párrafos y
+
+     bloques extensos de lectura (Ratio 14.73:1).
+
+   - Utilizar Blanco (#FFFFFF) sobre fondo Azul Noche (#14213D) para encabezados,
+
+     banners o pie de página (Ratio 15.96:1).
+
+
+
+2. Botones y Elementos Destacados:
+
+   - Para botones con fondo Naranja Pedal (#F39A2B), usar SIEMPRE texto en 
+
+     Azul Noche (#14213D) para cumplir con el estándar AAA (Ratio 7.29:1).
+
+   - EVITAR estrictamente el uso de texto blanco o crema sobre fondo Naranja Pedal.
+
+
+
+3. Textos Secundarios e Indicadores:
+
+   - El Gris Asfalto (#5B6470) es seguro para subtítulos o texto secundario sobre Crema.
+
+   - El Verde Ruta (#1E7A4F) se puede utilizar para enlaces o confirmaciones visuales
+
+     sobre fondo Crema.
+===================================================================================
+
+                 MAPA DE USO DE COLOR Y CLASIFICACIÓN DE ACCESIBILIDAD (WCAG)
+
+                            PROYECTO: RUEDA LIBRE
+
+===================================================================================
+
+
+
+1. CLASIFICACIÓN DE COMBINACIONES DE COLOR
+
+-----------------------------------------------------------------------------------
+
+| # | Combinación Evaluada                     | Ratio | Clasificación WCAG AA     |
+
+-----------------------------------------------------------------------------------
+
+| 1 | Texto Blanco (#FFFFFF) / Verde Ruta      | 5.24:1| Apta para texto normal    |
+
+| 2 | Texto Blanco (#FFFFFF) / Naranja Pedal   | 2.19:1| NO APTA                   |
+
+| 3 | Texto Azul Noche (#14213D) / Naranja Pedal| 7.29:1| Apta para texto normal    |
+
+| 4 | Texto Azul Noche (#14213D) / Crema       |14.73:1| Apta para texto normal    |
+
+| 5 | Texto Gris Asfalto (#5B6470) / Crema     | 5.37:1| Apta para texto normal    |
+
+| 6 | Texto Verde Ruta (#1E7A4F) / Crema       | 4.84:1| Apta para texto normal    |
+
+| 7 | Texto Naranja Pedal (#F39A2B) / Crema    | 2.02:1| NO APTA                   |
+
+| 8 | Texto Blanco (#FFFFFF) / Azul Noche      |15.96:1| Apta para texto normal    |
+
+-----------------------------------------------------------------------------------
+
+
+
+* Criterios WCAG AA:
+
+  - Texto Normal: Ratio minimo de 4.5:1
+
+  - Texto Grande (>=18pt o >=14pt negrita): Ratio minimo de 3.0:1
+
+
+
+
+
+2. BITÁCORA: MAPA DE USO DE COLOR EN LA INTERFAZ
+
+-----------------------------------------------------------------------------------
+
+
+
+[TEXTOS]
+
+- Texto Principal (Párrafos, cuerpo general): 
+
+  Azul Noche (#14213D) sobre fondo Crema (#FAF6EF).
+
+- Texto Secundario (Subtítulos, leyendas, metadatos): 
+
+  Gris Asfalto (#5B6470) sobre fondo Crema (#FAF6EF).
+
+- Texto sobre Secciones Oscuras (Banners, Header, Footer): 
+
+  Blanco (#FFFFFF) sobre fondo Azul Noche (#14213D) o Verde Ruta (#1E7A4F).
+
+
+
+[FONDOS]
+
+- Fondo General del Sitio Web: 
+
+  Crema (#FAF6EF) para reducir la fatiga visual.
+
+- Fondo de Encabezados (Header) y Pie de Página (Footer): 
+
+  Azul Noche (#14213D).
+
+- Fondo de Secciones Destacadas / Tarjetas: 
+
+  Verde Ruta (#1E7A4F) o Crema (#FAF6EF) según el contexto.
+
+
+
+[BOTONES Y ACCIONES (CTA)]
+
+- Botón Principal (Enviar reserva, Acción primaria): 
+
+  Fondo Verde Ruta (#1E7A4F) con texto en Blanco (#FFFFFF).
+
+- Botón Secundario / Destacados: 
+
+  Fondo Naranja Pedal (#F39A2B) estrictamente con texto en Azul Noche (#14213D).
+
+
+
+[ENLACES Y FOCO DE NAVEGACIÓN]
+
+- Enlaces Generales: 
+
+  Verde Ruta (#1E7A4F) con subrayado visible para no depender únicamente del color.
+
+- Enfoque por Teclado (:focus): 
+
+  Borde destacado en Naranja Pedal (#F39A2B) con contorno de 3px para alta visibilidad.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
