@@ -331,7 +331,89 @@ RECOMENDACIONES DE DISEÑO Y USO DE COLORES
 
   Borde destacado en Naranja Pedal (#F39A2B) con contorno de 3px para alta visibilidad.
 
+======================================================================
 
+                  BITÁCORA DE DEPURACIÓN - DEVTOOLS
+
+              Proyecto: Rueda Libre (Navegación / Menú)
+
+======================================================================
+
+
+
+1. CONTEXTO Y DIAGNÓSTICO INICIAL
+
+----------------------------------------------------------------------
+
+- Fecha de análisis: 25 de Octubre de 2026
+
+- Herramienta utilizada: Google Chrome DevTools (Panel "Elements" > pestaña "Styles").
+
+- Síntoma: La clase ".activo" asignada a los enlaces del menú de navegación no aplicaba correctamente los estilos visuales deseados (resaltado con el color Naranja Pedal y la línea inferior).
+
+
+
+2. REGISTRO Y ANÁLISIS DE ESPECIFICIDAD DE SELECTORES
+
+----------------------------------------------------------------------
+
+Al examinar las reglas CSS que competían por estilizar las etiquetas <a> dentro del menú de navegación, se calcularon los siguientes valores de especificidad:
+
+
+
+A) Selector Genérico de Enlaces: nav a
+
+   - Valor de especificidad: (0, 0, 1, 1) -> 2 puntos
+
+   - Desglose: 
+
+     * 0 IDs (#)
+
+     * 0 Clases / Pseudo-clases / Atributos (. / :)
+
+     * 2 Elementos de tipo HTML (nav, a)
+
+
+
+B) Selector Específico de Enlace Activo: #menu a.activo
+
+   - Valor de especificidad: (0, 1, 1, 1) / (0, 1, 1, 2) -> 112 puntos
+
+   - Desglose:
+
+     * 1 ID (#menu = 100 puntos)
+
+     * 1 Clase (.activo = 10 puntos)
+
+     * 2 Elementos de tipo HTML (ul/menu, a = 2 puntos)
+
+
+
+3. CAUSA RAÍZ DEL PROBLEMA IDENTIFICADA EN DEVTOOLS
+
+----------------------------------------------------------------------
+
+1. Omisión de la Estructura en el HTML:
+
+   En los archivos originales (index.html, tarifas.html y reservas.html), el elemento <ul nav> no tenía asignado el identificador id="menu", y los enlaces no poseían la clase class="activo", por lo que el navegador no tenía ningún punto de anclaje para aplicar la regla del menú activo.
+
+
+
+2. Conflicto por Reglas de Cascada (Sombra de Estilos):
+
+   Si existía una regla con menor especificidad definida posteriormente en la hoja de estilos con la propiedad !important o con valores heredados (como el color por defecto de los enlaces a:visited / a:link), esta anulaba las declaraciones si el selector no era lo suficientemente específico.
+
+
+
+4. SOLUCIÓN IMPLEMENTADA Y VERIFICADA
+
+----------------------------------------------------------------------
+
+- Se agregó id="menu" a la lista <ul> de la barra <nav> en cada una de las páginas HTML.
+
+- Se asignó la clase class="activo" únicamente al enlace de la página correspondiente a la sección abierta.
+
+- Se implementó en el CSS el selector de mayor especificidad "#menu a.activo", garantizando que el color Naranja Pedal (--naranja-pedal) y el borde inferior prevalezcan exitosamente sobre el resto de reglas genéricas.
 
 
 

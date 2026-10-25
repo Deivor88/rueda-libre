@@ -4,9 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap');
 
 /* =========================================
-   2. Variables de Color y Tipografía
+   2. Variables de Color, Tipografía y Espaciados
    ========================================= */
 :root {
+    /*1. Los colores de la marca */
     --azul-verdoso: #16495B;  /* Color del logo/marca y headers */
     --crema-claro: #FAF2C9;   /* Fondo general de la página */
     --blanco: #FFFFFF;        /* Fondo para tarjetas y contenedores */
@@ -15,9 +16,16 @@
     --gris-asfalto: #5B6470;  /* Textos secundarios y bordes */
     --texto-oscuro: #12242D;  /* Texto principal de lectura */
 
+    /* 2. Las dos familias tipográficas con fuentes de respaldo */
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
-}
+
+    /* 3. Escala de espaciado de tres tamaños en rem */
+    --space-sm: 0.5rem;  /* Pequeño */
+    --space-md: 1.5rem;  /* Mediano */
+    --space-lg: 3rem;    /* Grande */ 
+
+    }
 
 /* =========================================
    3. Estilos Generales y Reset Básico
@@ -75,26 +83,44 @@ header h1 {
     text-align: center;
     margin-top: 1rem;
 }
-
-nav ul {
+/* Lista del menú identificada con ID para alta especificidad */
+#menu {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 1.5rem;
+    gap: var(--space-md);
 }
 
-nav a {
+#menu a {
     color: var(--crema-claro);
     text-decoration: none;
     font-family: var(--font-heading);
     font-weight: 600;
     font-size: 1.05rem;
-    transition: color 0.2s ease;
+    padding-bottom: 2px;
+    transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-nav a:hover {
+/* Estado :hover - Se activa cuando el usuario pasa el cursor por encima */
+#menu a:hover {
     color: var(--naranja-pedal);
+    background-color: rgba(243, 154, 43, 0.1); /* Fondo sutil para realzar el hover */
+}
+
+/* Estado :focus - Se activa al navegar mediante la tecla Tab (Accesibilidad WCAG) */
+#menu a:focus {
+    outline: 3px solid var(--naranja-pedal);
+    outline-offset: 3px;
+    color: var(--crema-claro);
+    background-color: var(--verde-ruta); /* Contraste claro y diferenciable para teclado */
+}
+
+/* Estilo para el enlace de la página activa */
+#menu a.activo {
+    color: var(--naranja-pedal);
+    font-weight: 700;
+    border-bottom: 3px solid var(--naranja-pedal);
 }
 
 /* =========================================
@@ -234,13 +260,14 @@ textarea {
     color: var(--texto-oscuro);
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 0.8rem;
-    transition: border-color 0.2s ease;
+    margin-bottom: var(--space-sm);
+    /* Añadimos box-shadow a la transición para un efecto suave */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 input[type="radio"],
 input[type="checkbox"] {
-    margin-right: 0.5rem;
+    margin-right: var(--space-sm);
     accent-color: var(--verde-ruta);
 }
 
@@ -249,6 +276,19 @@ select:hover,
 textarea:hover {
     border-color: var(--verde-ruta);
 }
+
+/* Indicador de foco personalizado para los campos del formulario (Reemplaza el outline nativo) */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    outline: none; /* Quitamos el contorno genérico del navegador */
+    border-color: var(--naranja-pedal); /* Cambiamos el borde al color de acento */
+    box-shadow: 0 0 0 3px rgba(243, 154, 43, 0.35); /* Añadimos un halo luminoso de enfoque */
+} 
 
 button[type="submit"] {
     background-color: var(--verde-ruta);
@@ -267,6 +307,37 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #155a39;
+}
+
+/* =========================================
+   Clase CTA (Llamada a la Acción)
+   ========================================= */
+.btn-cta {
+    display: inline-block;
+    background-color: var(--verde-ruta);
+    color: var(--blanco);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(30, 122, 79, 0.2);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-cta:hover {
+    background-color: #155a39;
+    transform: translateY(-2px);
+}
+
+.btn-cta:focus {
+    outline: 3px solid var(--naranja-pedal) !important;
+    outline-offset: 3px;
+    background-color: #155a39;
+    color: var(--blanco);
 }
 
 /* =========================================
