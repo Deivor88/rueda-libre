@@ -1,0 +1,334 @@
+/* =========================================
+   1. Google Fonts Import (Montserrat & Open Sans)
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* =========================================
+   2. Variables de Color y Tipografía
+   ========================================= */
+:root {
+    --azul-verdoso: #16495B;  /* Color del logo/marca y headers */
+    --crema-claro: #FAF2C9;   /* Fondo general de la página */
+    --blanco: #FFFFFF;        /* Fondo para tarjetas y contenedores */
+    --verde-ruta: #1E7A4F;    /* Detalles y botones */
+    --naranja-pedal: #F39A2B; /* Foco accesible y acentos */
+    --gris-asfalto: #5B6470;  /* Textos secundarios y bordes */
+    --texto-oscuro: #12242D;  /* Texto principal de lectura */
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+/* =========================================
+   3. Estilos Generales y Reset Básico
+   ========================================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--crema-claro);
+    color: var(--texto-oscuro);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--azul-verdoso);
+    margin-top: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* =========================================
+   4. Encabezado (Header) y Navegación
+   ========================================= */
+header {
+    background-color: var(--azul-verdoso);
+    color: var(--crema-claro);
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+header img {
+    height: 150px;
+    width: auto;
+}
+
+header h1 {
+    color: var(--crema-claro);
+    font-size: 1.8rem;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: var(--crema-claro);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--naranja-pedal);
+}
+
+/* =========================================
+   5. Estructura Principal (Main Layout)
+   ========================================= */
+main {
+    max-width: 1000px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Párrafos principales e introductorios */
+main > p {
+    font-size: 1.15rem;
+    background-color: var(--blanco);
+    padding: 1.8rem;
+    border-radius: 10px;
+    border-left: 6px solid var(--verde-ruta);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+main > p a {
+    color: var(--verde-ruta);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: color 0.2s ease;
+}
+
+/* Diseños en Tarjetas (Articles & Sections) */
+article {
+    margin-bottom: 2rem;
+}
+
+section {
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(29, 78, 92, 0.08);
+    border: 1px solid rgba(91, 100, 112, 0.1);
+}
+
+section h1, section h2 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--crema-claro);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Listas */
+ul, ol {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.8rem;
+}
+
+li strong {
+    color: var(--azul-verdoso);
+}
+
+/* =========================================
+   6. Tablas (Página de Tarifas)
+   ========================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--blanco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+}
+
+th, td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(91, 100, 112, 0.2);
+}
+
+th {
+    background-color: var(--azul-verdoso);
+    color: var(--crema-claro);
+    font-family: var(--font-heading);
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    background-color: rgba(244, 239, 234, 0.5);
+}
+
+/* =========================================
+   7. Formularios (Página de Reservas)
+   ========================================= */
+fieldset {
+    border: 2px solid rgba(29, 78, 92, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--blanco);
+}
+
+legend {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--azul-verdoso);
+    background-color: var(--crema-claro);
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    border: 1px solid rgba(29, 78, 92, 0.2);
+}
+
+label {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--azul-verdoso);
+    font-size: 0.95rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 12px;
+    border: 1.5px solid var(--gris-asfalto);
+    border-radius: 4px;
+    background-color: var(--blanco);
+    color: var(--texto-oscuro);
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 0.8rem;
+    transition: border-color 0.2s ease;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: var(--verde-ruta);
+}
+
+input:hover, 
+select:hover, 
+textarea:hover {
+    border-color: var(--verde-ruta);
+}
+
+button[type="submit"] {
+    background-color: var(--verde-ruta);
+    color: var(--blanco);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.05rem;
+    border: none;
+    border-radius: 6px;
+    padding: 14px 24px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #155a39;
+}
+
+/* =========================================
+   8. Accesibilidad y Foco (WCAG AA/AAA)
+   ========================================= */
+a {
+    color: var(--verde-ruta);
+    font-weight: 600;
+}
+
+a:focus, 
+button:focus, 
+input:focus, 
+select:focus, 
+textarea:focus {
+    outline: 3px solid var(--naranja-pedal) !important;
+    outline-offset: 3px;
+}
+
+/* =========================================
+   9. Pie de Página (Footer)
+   ========================================= */
+footer {
+    background-color: var(--azul-verdoso);
+    color: var(--crema-claro);
+    padding: 3rem 2rem 1.5rem 2rem;
+    margin-top: 4rem;
+}
+
+footer h2, 
+footer h3 {
+    color: var(--crema-claro);
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer a {
+    color: var(--naranja-pedal);
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: var(--crema-claro);
+}
+
+footer p {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(244, 239, 234, 0.2);
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   10. Adaptabilidad Móvil (Responsive)
+   ========================================= */
+@media (min-width: 768px) {
+    header h1 {
+        width: auto;
+        margin-top: 0;
+    }
+}
