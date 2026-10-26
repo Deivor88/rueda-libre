@@ -415,6 +415,161 @@ B) Selector Específico de Enlace Activo: #menu a.activo
 
 - Se implementó en el CSS el selector de mayor especificidad "#menu a.activo", garantizando que el color Naranja Pedal (--naranja-pedal) y el borde inferior prevalezcan exitosamente sobre el resto de reglas genéricas.
 
+======================================================================
+
+RESUMEN DE MINIRETOS Y OPORTUNIDADES DE MEJORA - RUEDA LIBRE
+
+======================================================================
+
+
+
+----------------------------------------------------------------------
+
+1. RESUMEN DE CONSTRUCCIÓN POR MINIRETOS
+
+----------------------------------------------------------------------
+
+
+
+* MiniReto 1: Estructuración HTML5 y Arquitectura Multi-Página
+
+  - Construcción: Definición de la estructura semántica completa para 
+
+    tres páginas principales (Inicio/index.html, Tarifas/tarifas.html y 
+
+    Reservas/reservas.html). Integración de elementos semánticos principales
+
+    (<header>, <nav>, <main>, <article>, <section>, <fieldset>, <footer>).
+
+  - Componentes Clave: Formulario estructurado verticalmente con tipos de 
+
+    input validados, tablas semánticas con encabezados <thead> y cuerpo 
+
+    <tbody>, e imágenes con atributos 'alt' descriptivos.
+
+
+
+* MiniReto 2: Sistema de Diseño CSS, Variables y Identidad Visual
+
+  - Construcción: Creación y consolidación de style.css estructurado en 
+
+    secciones bien comentadas. Implementación del sistema de variables de 
+
+    color corporativas (--azul-verdoso, --verde-ruta, --crema-claro, etc.) 
+
+    y tipografías (Montserrat para títulos, Open Sans para cuerpo).
+
+  - Componentes Clave: Normalización de estilos globales, reset de caja 
+
+    (box-sizing: border-box), y jerarquía visual estandarizada.
+
+
+
+* MiniReto 3: Layouts Flexbox y Grid de Tarjetas de Servicios
+
+  - Construcción: Implementación de la sección de servicios en el inicio
+
+    mediante Flexbox (.servicios-grid), logrando una disposición responsive
+
+    que pasa de 1 columna en móviles a filas distribuidas equitativamente 
+
+    en pantallas de escritorio.
+
+  - Componentes Clave: Tarjetas (.servicio-card) integradas con imágenes al
+
+    100% de ancho, sombras suaves corporativas, transiciones elevadas en :hover
+
+    y la incorporación del badge "Nuevo" para bicicletas eléctricas usando
+
+    posicionamiento absoluto (position: absolute).
+
+
+
+* MiniReto 4: Formateo de Tablas, Formularios y Botones CTA
+
+  - Construcción: Refactorización del diseño de tablas para la página de 
+
+    Tarifas, eliminando bordes horizontales rígidos, añadiendo bordes 
+
+    sutiles y fondo de encabezado con alto contraste accesible. Reorganización 
+
+    del formulario de reservas asignando a <label> la propiedad display: block 
+
+    para forzar la posición vertical sobre los campos.
+
+  - Componentes Clave: Unificación de botones de acción (.btn-cta y submit) 
+
+    con relleno (padding) generoso para facilidad táctil y alineación centrada.
+
+
+
+* MiniReto 5: Accesibilidad WCAG y Componente Flotante
+
+  - Construcción: Optimización para navegación por teclado mediante 
+
+    indicadores de foco (:focus) claros y de alto contraste con --naranja-pedal. 
+
+    Implementación del botón flotante fijo de WhatsApp (.whatsapp-float) 
+
+    en la esquina inferior derecha accesible desde todas las páginas.
+
+  - Componentes Clave: Ajuste de espaciado inferior en el <footer> para 
+
+    evitar el solapamiento de elementos flotantes sobre el contenido final.
+
+
+
+----------------------------------------------------------------------
+
+2. PROPUESTAS DE MEJORA FUTURA (LO QUE MEJORARÍA)
+
+----------------------------------------------------------------------
+
+
+
+1. Interactividad con JavaScript:
+
+   - Añadir validación dinámica al formulario de reservas en tiempo real 
+
+     antes del envío (feedback visual inmediato para email o teléfono inválido).
+
+   - Crear un menú desplegable (hamburguesa) con JavaScript para pantallas 
+
+     móviles pequeñas, mejorando el espacio disponible en el encabezado.
+
+
+
+2. Optimización de Rendimiento y Assets:
+
+   - Convertir las imágenes PNG/JPG a formatos modernos de alta compresión 
+
+     como WebP para reducir tiempos de carga en dispositivos móviles.
+
+   - Implementar la propiedad loading="lazy" en las imágenes secundarias.
+
+
+
+3. Experiencia de Usuario (UX) e Iconografía:
+
+   - Sustituir los textos descriptivos de enlaces (como el de WhatsApp) por 
+
+     iconos SVG acompañados de aria-labels para mayor síntesis visual.
+
+   - Agregar un modal de confirmación visual interactivo al enviar el 
+
+     formulario de reservas.
+
+
+
+4. Mantenibilidad del Código:
+
+   - Considerar la migración de CSS nativo a un preprocesador como SASS/SCSS 
+
+     si el proyecto crece en complejidad, facilitando el anidamiento y la 
+
+     modularización por archivos de componentes.
+
+======================================================================
 
 
 

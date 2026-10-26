@@ -1,53 +1,40 @@
-/* =========================================
-   1. Google Fonts Import (Montserrat & Open Sans)
-   ========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap');
 
-/* =========================================
-   2. Variables de Color, Tipografía y Espaciados
-   ========================================= */
+/* Variables de marca */
 :root {
-    /*1. Los colores de la marca */
-    --azul-verdoso: #16495B;  /* Color del logo/marca y headers */
-    --crema-claro: #FAF2C9;   /* Fondo general de la página */
-    --blanco: #FFFFFF;        /* Fondo para tarjetas y contenedores */
-    --verde-ruta: #1E7A4F;    /* Detalles y botones */
-    --naranja-pedal: #F39A2B; /* Foco accesible y acentos */
-    --gris-asfalto: #5B6470;  /* Textos secundarios y bordes */
-    --texto-oscuro: #12242D;  /* Texto principal de lectura */
-
-    /* 2. Las dos familias tipográficas con fuentes de respaldo */
+    --azul-verdoso: #16495B;
+    --crema-claro: #FAF2C9;
+    --blanco: #FFFFFF;
+    --verde-ruta: #1E7A4F;
+    --naranja-pedal: #F39A2B;
+    --gris-asfalto: #5B6470;
+    --texto-oscuro: #12242D;
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
+    --space-sm: 0.5rem;
+    --space-md: 1.5rem;
+    --space-lg: 3rem;
+}
 
-    /* 3. Escala de espaciado de tres tamaños en rem */
-    --space-sm: 0.5rem;  /* Pequeño */
-    --space-md: 1.5rem;  /* Mediano */
-    --space-lg: 3rem;    /* Grande */ 
-
-    }
-
-/* =========================================
-   3. Estilos Generales y Reset Básico
-   ========================================= */
+/* Estilos generales */
 * {
     box-sizing: border-box;
 }
 
 body {
+    margin: 0;
+    padding: 0 0 6rem;
     background-color: var(--crema-claro);
     color: var(--texto-oscuro);
     font-family: var(--font-body);
     font-size: 1rem;
     line-height: 1.7;
-    margin: 0;
-    padding: 0;
 }
 
 h1, h2, h3 {
-    font-family: var(--font-heading);
-    color: var(--azul-verdoso);
     margin-top: 0;
+    color: var(--azul-verdoso);
+    font-family: var(--font-heading);
 }
 
 img {
@@ -56,145 +43,153 @@ img {
     border-radius: 8px;
 }
 
-/* =========================================
-   4. Encabezado (Header) y Navegación
-   ========================================= */
+a {
+    color: var(--verde-ruta);
+    font-weight: 600;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid var(--naranja-pedal);
+    outline-offset: 3px;
+}
+
+/* Encabezado y navegación */
 header {
-    background-color: var(--azul-verdoso);
-    color: var(--crema-claro);
-    padding: 1.5rem 2rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    padding: 1.5rem 2rem;
+    background-color: var(--azul-verdoso);
+    color: var(--crema-claro);
     box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-header img {
-    height: 150px;
+header .logo {
     width: auto;
+    height: 9.375rem;
 }
 
-header h1 {
+.site-name {
+    width: 100%;
+    margin: 1rem 0 0;
     color: var(--crema-claro);
     font-size: 1.8rem;
-    margin: 0;
-    width: 100%;
+    font-family: var(--font-heading);
+    font-weight: 700;
     text-align: center;
-    margin-top: 1rem;
 }
-/* Lista del menú identificada con ID para alta especificidad */
+
 #menu {
-    list-style: none;
+    display: flex;
+    gap: var(--space-md);
     margin: 0;
     padding: 0;
-    display: flex; /* Muestra las opciones organizadas en una fila horizontal */
-    gap: var(--space-md);
+    list-style: none;
+}
+
+#menu li {
+    margin-bottom: 0;
 }
 
 #menu a {
-    color: var(--crema-claro);
-    text-decoration: none;
-    font-family: var(--font-heading);
-    font-weight: 600;
-    font-size: 1.05rem;
     padding-bottom: 2px;
+    color: var(--crema-claro);
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    text-decoration: none;
     transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Estado :hover - Se activa cuando el usuario pasa el cursor por encima */
 #menu a:hover {
+    background-color: rgba(243, 154, 43, 0.1);
     color: var(--naranja-pedal);
-    background-color: rgba(243, 154, 43, 0.1); /* Fondo sutil para realzar el hover */
 }
 
-/* Estado :focus - Se activa al navegar mediante la tecla Tab (Accesibilidad WCAG) */
 #menu a:focus {
-    outline: 3px solid var(--naranja-pedal);
-    outline-offset: 3px;
+    background-color: var(--verde-ruta);
     color: var(--crema-claro);
-    background-color: var(--verde-ruta); /* Contraste claro y diferenciable para teclado */
 }
 
-/* Estilo para el enlace de la página activa */
 #menu a.activo {
+    border-bottom: 3px solid var(--naranja-pedal);
     color: var(--naranja-pedal);
     font-weight: 700;
-    border-bottom: 3px solid var(--naranja-pedal);
 }
 
-/* =========================================
-   5. Estructura Principal (Main Layout)
-   ========================================= */
+/* Contenido principal y servicios */
 main {
-    max-width: 62.5rem; /* Limita el ancho en rem (aprox. 1000px) */
-    margin-left: auto;   /* Centra automáticamente a la izquierda */
-    margin-right: auto;  /* Centra automáticamente a la derecha */
-    margin-top: var(--space-lg);
-    margin-bottom: var(--space-lg);
+    max-width: 62.5rem;
+    margin: var(--space-lg) auto;
     padding: 0 var(--space-md);
 }
 
-/* Ajuste de la imagen de portada */
-.portada img,
-.portada-img {
-    width: 100%;             /* Ocupa todo el ancho disponible */
-    max-height: 450px;       /* Limita la altura máxima para que no sea gigante */
-    object-fit: cover;       /* Asegura que la imagen no se deforme */
-    border-radius: 12px;     /* Esquinas redondeadas opcionales */
+.page-title {
     margin-bottom: var(--space-md);
+    font-size: 1.8rem;
+    text-align: center;
 }
 
-/* Portada de inicio - Estilo base para móviles */
 .portada {
-    padding: var(--space-lg) var(--space-md);
-    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
+    padding: var(--space-lg) var(--space-md);
+    text-align: center;
 }
 
-/* Párrafos principales e introductorios */
-main > p {
-    font-size: 1.15rem;
-    background-color: var(--blanco);
-    padding: 1.8rem;
-    border-radius: 10px;
-    border-left: 3px solid var(--verde-ruta);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    margin-bottom: 2rem;
+.portada img {
+    width: 100%;
+    max-height: 450px;
+    margin-bottom: var(--space-md);
+    border-radius: 12px;
+    object-fit: cover;
 }
+
+main > p {
+    margin-bottom: 2rem;
+    padding: 1.8rem;
+    border-left: 3px solid var(--verde-ruta);
+    border-radius: 10px;
+    background-color: var(--blanco);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-size: 1.15rem;
+}
+
 main > p a {
     color: var(--verde-ruta);
-    text-decoration: none;
-    font-weight: 600;
     font-size: 1.05rem;
+    text-decoration: none;
     transition: color 0.2s ease;
 }
 
-/* Diseños en Tarjetas (Articles & Sections) */
 article {
     margin-bottom: 2rem;
 }
 
 section {
-    background-color: var(--blanco);
     padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(29, 78, 92, 0.08);
     border: 1px solid rgba(91, 100, 112, 0.1);
+    border-radius: 12px;
+    background-color: var(--blanco);
+    box-shadow: 0 4px 15px rgba(29, 78, 92, 0.08);
 }
 
-section h1, section h2 {
-    font-size: 1.5rem;
-    border-bottom: 2px solid var(--crema-claro);
-    padding-bottom: 0.5rem;
+section h1,
+section h2 {
     margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--crema-claro);
+    font-size: 1.5rem;
 }
 
-/* Listas */
-ul, ol {
+ul,
+ol {
     padding-left: 1.5rem;
 }
 
@@ -206,24 +201,78 @@ li strong {
     color: var(--azul-verdoso);
 }
 
-/* =========================================
-   6. Tablas (Página de Tarifas)
-   ========================================= */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: var(--blanco);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(29, 78, 92, 0.05);
+.servicios-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
     margin-top: var(--space-md);
-    margin-bottom: var(--space-md);
 }
 
-th, td {
+.servicio-card {
+    position: relative;
+    flex: 1;
+    padding: var(--space-md);
+    border: 1px solid rgba(91, 100, 112, 0.15);
+    border-radius: 12px;
+    background-color: var(--blanco);
+    box-shadow: 0 4px 12px rgba(29, 78, 92, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(29, 78, 92, 0.1);
+}
+
+.servicio-card img {
+    width: 100%;
+    margin-bottom: var(--space-sm);
+}
+
+.servicio-card h3 {
+    margin: var(--space-sm) 0;
+}
+
+.servicio-card p {
+    margin-bottom: 0;
+}
+
+.etiqueta-nuevo {
+    position: absolute;
+    z-index: 1;
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    background-color: var(--verde-ruta);
+    color: var(--blanco);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* Tablas de tarifas */
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    margin: var(--space-md) 0;
+    border-collapse: collapse;
+    border-radius: 8px;
+    background-color: var(--blanco);
+    box-shadow: 0 4px 12px rgba(29, 78, 92, 0.05);
+    overflow: hidden;
+}
+
+th,
+td {
     padding: 0.85rem 1.15rem;
+    border-bottom: none;
     text-align: left;
-    border-bottom: none; /* ELIMINA los bordes horizontales entre filas */
 }
 
 th {
@@ -238,35 +287,32 @@ tbody tr:hover {
     background-color: rgba(29, 78, 92, 0.03);
 }
 
-/* =========================================
-   7. Formularios (Página de Reservas)
-   ========================================= */
+/* Formulario de reservas */
 fieldset {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
     border: 2px solid rgba(29, 78, 92, 0.2);
     border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 2rem; /* Separación ampliada entre grupos de campos */
     background-color: var(--blanco);
 }
 
 legend {
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(29, 78, 92, 0.2);
+    border-radius: 4px;
+    background-color: var(--crema-claro);
+    color: var(--azul-verdoso);
     font-family: var(--font-heading);
     font-weight: 700;
-    color: var(--azul-verdoso);
-    background-color: var(--crema-claro);
-    padding: 0.4rem 1rem;
-    border-radius: 4px;
-    border: 1px solid rgba(29, 78, 92, 0.2);
 }
 
 label {
-    font-family: var(--font-heading);
-    font-weight: 600;
+    display: block;
+    margin: 0.75rem 0 0.3rem;
     color: var(--azul-verdoso);
+    font-family: var(--font-heading);
     font-size: 0.95rem;
-    display: block; /* MODIFICACIÓN: Obliga a que la etiqueta quede justo sobre su campo */
-    margin-top: 0.75rem;
-    margin-bottom: 0.3rem;
+    font-weight: 600;
 }
 
 input[type="text"],
@@ -276,16 +322,15 @@ input[type="date"],
 input[type="number"],
 select,
 textarea {
-    font-family: var(--font-body);
-    font-size: 1rem;
+    width: 100%;
+    margin-bottom: var(--space-sm);
     padding: 12px;
     border: 1.5px solid var(--gris-asfalto);
     border-radius: 4px;
     background-color: var(--blanco);
     color: var(--texto-oscuro);
-    width: 100%; /* Ocupa todo el ancho disponible */
-    box-sizing: border-box;
-    margin-bottom: var(--space-sm);
+    font-family: var(--font-body);
+    font-size: 1rem;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -295,13 +340,16 @@ input[type="checkbox"] {
     accent-color: var(--verde-ruta);
 }
 
-input:hover, 
-select:hover, 
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+input[type="date"]:hover,
+input[type="number"]:hover,
+select:hover,
 textarea:hover {
     border-color: var(--verde-ruta);
 }
 
-/* Indicador de foco personalizado para los campos del formulario (Reemplaza el outline nativo) */
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="tel"]:focus,
@@ -309,149 +357,56 @@ input[type="date"]:focus,
 input[type="number"]:focus,
 select:focus,
 textarea:focus {
-    outline: none; /* Quitamos el contorno genérico del navegador */
-    border-color: var(--naranja-pedal); /* Cambiamos el borde al color de acento */
-    box-shadow: 0 0 0 3px rgba(243, 154, 43, 0.35); /* Añadimos un halo luminoso de enfoque */
-} 
-
-button[type="submit"] {
-    background-color: var(--verde-ruta);
-    color: var(--blanco);
-    font-family: var(--font-heading);
-    font-weight: 600;
-    font-size: 1.05rem;
-    border: none;
-    border-radius: 6px;
-    padding: 16px 28px; /* MODIFICACIÓN: Relleno más generoso para el botón */
-    cursor: pointer;
-    width: 100%;
-    margin-top: 1rem;
-    transition: background-color 0.2s ease;
+    border-color: var(--naranja-pedal);
+    box-shadow: 0 0 0 3px rgba(243, 154, 43, 0.35);
 }
 
-button[type="submit"]:hover {
-    background-color: #155a39;
-}
-
-/* =========================================
-   Clase CTA (Llamada a la Acción)
-   ========================================= */
+/* Botones de llamada a la acción */
 .btn-cta {
-    display: block;                  /* Convierte el botón en bloque para permitir centrado */
-    width: fit-content;              /* Ajusta el ancho al texto del botón */
-    margin: 1.5rem auto 0 auto;      /* Centra horizontalmente el botón con 'auto' a los lados */
-    background-color: var(--verde-ruta);
-    color: var(--blanco);
-    font-family: var(--font-heading);
-    font-weight: 600;
-    font-size: 1rem;
+    display: block;
+    width: fit-content;
+    margin: 1.5rem auto 0;
     padding: 0.75rem 1.5rem;
+    border: 0;
     border-radius: 6px;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
+    background-color: var(--verde-ruta);
     box-shadow: 0 4px 10px rgba(30, 122, 79, 0.2);
+    color: var(--blanco);
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.btn-cta:hover {
-    background-color: #155a39;
-    transform: translateY(-2px);
-}
-
+.btn-cta:hover,
 .btn-cta:focus {
-    outline: 3px solid var(--naranja-pedal) !important;
-    outline-offset: 3px;
     background-color: #155a39;
     color: var(--blanco);
 }
 
-/* =========================================
-   8. Accesibilidad y Foco (WCAG AA/AAA)
-   ========================================= */
-a {
-    color: var(--verde-ruta);
-    font-weight: 600;
+.btn-cta:hover {
+    transform: translateY(-2px);
 }
 
-a:focus, 
-button:focus, 
-input:focus, 
-select:focus, 
-textarea:focus {
-    outline: 3px solid var(--naranja-pedal) !important;
-    outline-offset: 3px;
-}
-
-/* =========================================
-   Tarjetas de Servicios (Inicio)
-   ========================================= */
-
-/* Contenedor o grid para organizar las tarjetas de servicio */
-.servicios-grid {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md); /* Espaciado automático entre tarjetas usando la escala */
-    margin-top: var(--space-md);
-}
-
-/* Estilo individual de cada tarjeta de servicio */
-.servicio-card {
-    background-color: var(--blanco);
-    padding: var(--space-md); /* Relleno interior usando la variable */
-    border: 1px solid rgba(91, 100, 112, 0.15); /* Borde sutil basado en --gris-asfalto */
-    border-radius: 12px; /* Esquinas redondeadas */
-    box-shadow: 0 4px 12px rgba(29, 78, 92, 0.05); /* Sombra suave corporativa */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* Efecto hover elegante para la tarjeta */
-.servicio-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(29, 78, 92, 0.1);
-}
-
-/* La imagen ocupa exactamente el 100% del ancho de la tarjeta */
-.servicio-card img {
-    width: 100%; /* Unidad porcentual requerida */
-    height: auto;
-    border-radius: 8px; /* Esquinas redondeadas internas para la imagen */
-    margin-bottom: var(--space-sm);
-}
-
-.servicio-card h3 {
-    color: var(--azul-verdoso);
-    font-family: var(--font-heading);
-    margin-top: var(--space-sm);
-    margin-bottom: var(--space-sm);
-}
-
-.servicio-card p {
-    color: var(--texto-oscuro);
-    font-family: var(--font-body);
-    margin-bottom: 0;
-}
-
-
-
-/* =========================================
-   9. Pie de Página (Footer)
-   ========================================= */
+/* Pie de página y contacto fijo */
 footer {
+    margin-top: 4rem;
+    padding: 3rem 2rem 1.5rem;
     background-color: var(--azul-verdoso);
     color: var(--crema-claro);
-    padding: 3rem 2rem 1.5rem 2rem;
-    margin-top: 4rem;
 }
 
-footer h2, 
+footer h2,
 footer h3 {
     color: var(--crema-claro);
 }
 
 footer ul {
-    list-style: none;
     padding: 0;
+    list-style: none;
 }
 
 footer a {
@@ -464,35 +419,76 @@ footer a:hover {
 }
 
 footer p {
-    text-align: center;
     margin-top: 2.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid rgba(244, 239, 234, 0.2);
     font-size: 0.9rem;
+    text-align: center;
 }
 
-/* =========================================
-   10. Adaptabilidad Móvil (Responsive)
-   ========================================= */
+.whatsapp-link {
+    position: fixed;
+    z-index: 10;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 999px;
+    background-color: var(--verde-ruta);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    color: var(--blanco);
+    font-family: var(--font-heading);
+    text-decoration: none;
+}
+
+.whatsapp-link:hover,
+.whatsapp-link:focus {
+    background-color: #155a39;
+    color: var(--blanco);
+}
+
+/* Adaptación a pantallas medianas y grandes */
 @media (min-width: 768px) {
-    header h1 {
+    .site-name {
         width: auto;
         margin-top: 0;
     }
 
-    /* Añadimos aquí la altura mínima para la portada en escritorio/tablet */
     .portada {
-        min-height: 85vh; 
-        justify-content: center; /* Centra verticalmente el contenido */
+        min-height: 85vh;
+        justify-content: center;
+    }
+
+    .servicios-grid {
+        flex-direction: row;
     }
 }
-/* Adaptabilidad para pantallas grandes (Grid de columnas en Escritorio) */
-@media (min-width: 768px) {
-    .servicios-grid {
-        flex-direction: row; /* Pone las tarjetas lado a lado en pantallas grandes */
+
+@media (max-width: 520px) {
+    header {
+        justify-content: center;
+        gap: var(--space-md);
+        padding: 1rem;
     }
-    
-    .servicio-card {
-        flex: 1; /* Distribuye el espacio equitativamente */
+
+    header .logo {
+        height: 5rem;
+    }
+
+    #menu {
+        gap: 0.75rem;
+    }
+
+    #menu a {
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 1.25rem;
+    }
+
+    th,
+    td {
+        padding: 0.6rem;
+        font-size: 0.85rem;
     }
 }
