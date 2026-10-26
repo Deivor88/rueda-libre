@@ -88,7 +88,7 @@ header h1 {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
+    display: flex; /* Muestra las opciones organizadas en una fila horizontal */
     gap: var(--space-md);
 }
 
@@ -127,9 +127,32 @@ header h1 {
    5. Estructura Principal (Main Layout)
    ========================================= */
 main {
-    max-width: 1000px;
-    margin: 2.5rem auto;
-    padding: 0 1.5rem;
+    max-width: 62.5rem; /* Limita el ancho en rem (aprox. 1000px) */
+    margin-left: auto;   /* Centra automáticamente a la izquierda */
+    margin-right: auto;  /* Centra automáticamente a la derecha */
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    padding: 0 var(--space-md);
+}
+
+/* Ajuste de la imagen de portada */
+.portada img,
+.portada-img {
+    width: 100%;             /* Ocupa todo el ancho disponible */
+    max-height: 450px;       /* Limita la altura máxima para que no sea gigante */
+    object-fit: cover;       /* Asegura que la imagen no se deforme */
+    border-radius: 12px;     /* Esquinas redondeadas opcionales */
+    margin-bottom: var(--space-md);
+}
+
+/* Portada de inicio - Estilo base para móviles */
+.portada {
+    padding: var(--space-lg) var(--space-md);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 /* Párrafos principales e introductorios */
@@ -138,7 +161,7 @@ main > p {
     background-color: var(--blanco);
     padding: 1.8rem;
     border-radius: 10px;
-    border-left: 6px solid var(--verde-ruta);
+    border-left: 3px solid var(--verde-ruta);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     margin-bottom: 2rem;
 }
@@ -192,25 +215,27 @@ table {
     background-color: var(--blanco);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(29, 78, 92, 0.05);
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
 }
 
 th, td {
-    padding: 14px 16px;
+    padding: 0.85rem 1.15rem;
     text-align: left;
-    border-bottom: 1px solid rgba(91, 100, 112, 0.2);
+    border-bottom: none; /* ELIMINA los bordes horizontales entre filas */
 }
 
 th {
     background-color: var(--azul-verdoso);
-    color: var(--crema-claro);
+    color: var(--blanco);
     font-family: var(--font-heading);
     font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 tbody tr:hover {
-    background-color: rgba(244, 239, 234, 0.5);
+    background-color: rgba(29, 78, 92, 0.03);
 }
 
 /* =========================================
@@ -220,7 +245,7 @@ fieldset {
     border: 2px solid rgba(29, 78, 92, 0.2);
     border-radius: 8px;
     padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem; /* Separación ampliada entre grupos de campos */
     background-color: var(--blanco);
 }
 
@@ -239,8 +264,8 @@ label {
     font-weight: 600;
     color: var(--azul-verdoso);
     font-size: 0.95rem;
-    display: inline-block;
-    margin-top: 0.5rem;
+    display: block; /* MODIFICACIÓN: Obliga a que la etiqueta quede justo sobre su campo */
+    margin-top: 0.75rem;
     margin-bottom: 0.3rem;
 }
 
@@ -258,10 +283,9 @@ textarea {
     border-radius: 4px;
     background-color: var(--blanco);
     color: var(--texto-oscuro);
-    width: 100%;
+    width: 100%; /* Ocupa todo el ancho disponible */
     box-sizing: border-box;
     margin-bottom: var(--space-sm);
-    /* Añadimos box-shadow a la transición para un efecto suave */
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -298,7 +322,7 @@ button[type="submit"] {
     font-size: 1.05rem;
     border: none;
     border-radius: 6px;
-    padding: 14px 24px;
+    padding: 16px 28px; /* MODIFICACIÓN: Relleno más generoso para el botón */
     cursor: pointer;
     width: 100%;
     margin-top: 1rem;
@@ -313,7 +337,9 @@ button[type="submit"]:hover {
    Clase CTA (Llamada a la Acción)
    ========================================= */
 .btn-cta {
-    display: inline-block;
+    display: block;                  /* Convierte el botón en bloque para permitir centrado */
+    width: fit-content;              /* Ajusta el ancho al texto del botón */
+    margin: 1.5rem auto 0 auto;      /* Centra horizontalmente el botón con 'auto' a los lados */
     background-color: var(--verde-ruta);
     color: var(--blanco);
     font-family: var(--font-heading);
@@ -356,6 +382,57 @@ textarea:focus {
     outline: 3px solid var(--naranja-pedal) !important;
     outline-offset: 3px;
 }
+
+/* =========================================
+   Tarjetas de Servicios (Inicio)
+   ========================================= */
+
+/* Contenedor o grid para organizar las tarjetas de servicio */
+.servicios-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md); /* Espaciado automático entre tarjetas usando la escala */
+    margin-top: var(--space-md);
+}
+
+/* Estilo individual de cada tarjeta de servicio */
+.servicio-card {
+    background-color: var(--blanco);
+    padding: var(--space-md); /* Relleno interior usando la variable */
+    border: 1px solid rgba(91, 100, 112, 0.15); /* Borde sutil basado en --gris-asfalto */
+    border-radius: 12px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 12px rgba(29, 78, 92, 0.05); /* Sombra suave corporativa */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto hover elegante para la tarjeta */
+.servicio-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(29, 78, 92, 0.1);
+}
+
+/* La imagen ocupa exactamente el 100% del ancho de la tarjeta */
+.servicio-card img {
+    width: 100%; /* Unidad porcentual requerida */
+    height: auto;
+    border-radius: 8px; /* Esquinas redondeadas internas para la imagen */
+    margin-bottom: var(--space-sm);
+}
+
+.servicio-card h3 {
+    color: var(--azul-verdoso);
+    font-family: var(--font-heading);
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.servicio-card p {
+    color: var(--texto-oscuro);
+    font-family: var(--font-body);
+    margin-bottom: 0;
+}
+
+
 
 /* =========================================
    9. Pie de Página (Footer)
@@ -401,5 +478,21 @@ footer p {
     header h1 {
         width: auto;
         margin-top: 0;
+    }
+
+    /* Añadimos aquí la altura mínima para la portada en escritorio/tablet */
+    .portada {
+        min-height: 85vh; 
+        justify-content: center; /* Centra verticalmente el contenido */
+    }
+}
+/* Adaptabilidad para pantallas grandes (Grid de columnas en Escritorio) */
+@media (min-width: 768px) {
+    .servicios-grid {
+        flex-direction: row; /* Pone las tarjetas lado a lado en pantallas grandes */
+    }
+    
+    .servicio-card {
+        flex: 1; /* Distribuye el espacio equitativamente */
     }
 }
