@@ -340,6 +340,47 @@ input[type="checkbox"] {
     accent-color: var(--verde-ruta);
 }
 
+.terminos-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.terminos-container label {
+    display: inline;
+    margin: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.terminos-container input[type="checkbox"] {
+    margin: 0;
+    width: 1.1rem;
+    height: 1.1rem;
+    cursor: pointer;
+}
+
+/* --- Contenedor flexible para los radio buttons (Recorrido) --- */
+.radio-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente el círculo y el texto */
+    gap: 0.75rem;        /* Espacio horizontal entre el radio y el texto */
+    margin-bottom: 0.75rem; /* Espacio entre las opciones */
+}
+
+.radio-container label {
+    display: inline;
+    margin: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.radio-container input[type="radio"] {
+    margin: 0;
+    cursor: pointer;
+}
+
 input[type="text"]:hover,
 input[type="email"]:hover,
 input[type="tel"]:hover,

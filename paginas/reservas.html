@@ -62,11 +62,17 @@
                             <option value="dia">Alquiler por Día Completo</option>
                         </select>
                         <br>
-                        <label for="recorrido">Recorrido:</label><br>
-                        <input type="radio" name="aceptarecorrido" id="aceptar" required>
-                        <label for="aceptar">Acepta recorrido</label><br>
-                        <input type="radio" name="aceptarecorrido" id="rechazar" required>
-                        <label for="rechazar">Rechaza recorrido</label><br>
+                        <label for="recorrido">Recorrido:</label>
+                        <div class="radio-container">
+                            <input type="radio" name="aceptarecorrido" id="aceptar" required>
+                            <label for="aceptar">Acepta recorrido</label>
+                        </div>
+                        <br>
+                        <div class="radio-container">
+                            <input type="radio" name="aceptarecorrido" id="rechazar" required>
+                            <label for="rechazar">Rechaza recorrido</label>
+                        </div>
+                        <br>
                         <label for="recorrido">Tipo de recorrido:</label><br>
                          <select id="recorrido" name="recorrido" required>
                             <option value="rio-y-parques12k">Río y Parques (12 km)</option>
@@ -89,12 +95,15 @@
                  
                 <fieldset>
                     <legend>Confirmación</legend>
-                        <textarea name="comentarios" id="comentarios" rows="4" cols="50" maxlength="300" placeholder="Comentarios adicionales (opcional)"></textarea>
-                        <br>                 
-                        <input type="checkbox" id="terminos" name="terminos" required checked>
-                        <label for="terminos">Acepto los términos, condiciones y políticas de privacidad</label>
-                        <br>
-                        <button type="submit" class="btn-cta">Confirmar Alquiler</button>
+
+                         <textarea name="comentarios" id="comentarios" rows="4" cols="50" maxlength="300" placeholder="Comentarios adicionales (opcional)"></textarea>
+
+                            <!-- Contenedor añadido para activar la alineación con Flexbox -->
+                        <div class="terminos-container">
+                            <input type="checkbox" id="terminos" name="terminos" required checked>
+                            <label for="terminos">Acepto los términos, condiciones y políticas de privacidad</label>
+                        </div>
+                         <button type="submit" class="btn-cta">Confirmar Alquiler</button>
                 </fieldset>
 
             </form>
