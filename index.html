@@ -9,15 +9,21 @@
 </head>
 <body>
     <header>
-        <img src="img/logo.png" alt="Logo de Rueda Libre" class="logo">
-        <nav>
-            <ul id="menu">
+        <!-- Logo y nombre del sitio al lado izquierdo -->
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo de Rueda Libre" class="logo">
+            <p class="site-name">RUEDA LIBRE</p>
+        </div>
+
+        <!-- Menú de navegación lado derecho -->
+        <nav id="menu">
+            <ul>
                 <li><a href="index.html" class="activo">Inicio</a></li>
                 <li><a href="paginas/tarifas.html">Tarifas</a></li>
                 <li><a href="paginas/reservas.html">Reservas</a></li>
             </ul>    
         </nav>
-        <p class="site-name">Rueda Libre</p>
+        
     </header> 
     
     <main>
@@ -78,6 +84,76 @@
                 </ul>
             </section>
         </article>
+        <!-- Sección Nuestra flota -->
+         <section class="flota-section">
+            <h2>Nuestra Flota</h2>
+            <div class="flota-grid">
+        
+        <!-- Modelo 1 -->
+        <article class="bici-card">
+            <img src="img/urbana-clasica.png" alt="Urbana Clásica">
+            <h3>Urbana Clásica</h3>
+            <p>Cómoda y liviana para las ciclorrutas.</p>
+            <span class="precio">$10.000 <small>/ hora</small></span>
+            <a href="paginas/reservas.html" class="btn-cta">Reservar</a>
+        </article>
+
+        <!-- Modelo 2 -->
+        <article class="bici-card">
+            <img src="img/plegable.png" alt="Urbana Plegable">
+            <h3>Urbana Plegable</h3>
+            <p>Se dobla en segundos; ideal para combinar con el metro.</p>
+            <span class="precio">$12.000 <small>/ hora</small></span>
+            <a href="paginas/reservas.html" class="btn-cta">Reservar</a>
+        </article>
+
+        <!-- Modelo 3 -->
+        <article class="bici-card">
+            <img src="img/montaña.png" alt="Montaña Trail">
+            <h3>Montaña Trail</h3>
+            <p>Suspensión delantera y 21 cambios para las subidas.</p>
+            <span class="precio">$15.000 <small>/ hora</small></span>
+            <a href="paginas/reservas.html" class="btn-cta">Reservar</a>
+        </article>
+
+        <!-- Modelo 4 -->
+        <article class="bici-card">
+            <img src="img/aventura.png" alt="Gravel Aventura">
+            <h3>Gravel Aventura</h3>
+            <p>Para rutas mixtas de asfalto y destapado.</p>
+            <span class="precio">$18.000 <small>/ hora</small></span>
+            <a href="paginas/reservas.html" class="btn-cta">Reservar</a>
+        </article>
+
+        <!-- Modelo 5 -->
+        <article class="bici-card">
+            <img src="img/electrica-urbana.png" alt="Eléctrica Urbana">
+            <h3>Eléctrica Urbana</h3>
+            <p>Asistencia eléctrica con 45 km de autonomía.</p>
+            <span class="precio">$25.000 <small>/ hora</small></span>
+            <a href="paginas/reservas.html" class="btn-cta">Reservar</a>
+        </article>
+
+        <!-- Modelo 6 -->
+        <article class="bici-card">
+            <img src="img/infantil.png" alt="Infantil">
+            <h3>Infantil</h3>
+            <p>Para niños de 6 a 10 años.</p>
+            <span class="precio">$8.000 <small>/ hora</small></span>
+            <a href="paginas/reservas.html" class="btn-cta">Reservar</a>
+        </article>
+
+        <!-- Modelo 7 (Nuevo) -->
+        <article class="bici-card">
+            <img src="img/tandem.png" alt="Tándem">
+            <h3>Tándem</h3>
+            <p>Para dos personas; perfecta para pasear en pareja.</p>
+            <span class="precio">$20.000 <small>/ hora</small></span>
+            <a href="paginas/reservas.html" class="btn-cta">Reservar</a>
+        </article>
+
+    </div>
+</section>
 
         <article>
             <section id="pasos_alquilar">
@@ -104,8 +180,17 @@
     </main>
 
     <!-- Pie de página -->
-    <footer id="contacto">
-        <h2>Contáctanos</h2>
+<footer id="contacto">
+    <!-- Bloque 1: Marca / Información general -->
+    <div class="footer-col">
+        <h3>Rueda Libre</h3>
+        <p>Tu mejor opción para el alquiler de bicicletas y recorrer la ciudad con total libertad.</p>
+      
+    </div>
+
+    <!-- Bloque 2: Contacto -->
+    <div class="footer-col">
+        <h3>Contáctanos</h3>
         <ul>
             <li>
                 <a href="https://www.google.com/maps/place/Riwi/@6.2191063,-75.5861952,17z/data=!3m1!4b1!4m6!3m5!1s0x8e44293f0e114eef:0x99610cdd44c7c081!8m2!3d6.219101!4d-75.5836149!16s%2Fg%2F11l2x8f5ch?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
@@ -123,15 +208,19 @@
                 </a>
             </li>
         </ul>
+    </div>
 
-        <h3>Horarios de atención:</h3>
+    <!-- Bloque 3: Horarios de atención -->
+    <div class="footer-col">
+        <h3>Horarios de atención</h3>
         <ul>
             <li>Lunes a viernes: 9:00 AM - 6:00 PM</li>
             <li>Sábados: 10:00 AM - 4:00 PM</li>
             <li>Domingos: Cerrado</li>
         </ul>
-        <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
-    </footer>
+    </div>
+</footer>
+  <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
     <a class="whatsapp-link" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
 </body>
 </html>
