@@ -9,15 +9,20 @@
 </head>
 <body>
     <header>
-        <img src="../img/logo.png" alt="Logo de Rueda Libre" class="logo">
-        <nav>
-            <ul id="menu">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="tarifas.html" class="activo">Tarifas</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
+       <!-- Logo y nombre del sitio al lado izquierdo -->
+        <div class="logo-container">
+            <img src="../img/logo.png" alt="Logo de Rueda Libre" class="logo">
+            <p class="site-name">RUEDA LIBRE</p>
+        </div>
+       <!-- Menú de navegación lado derecho -->
+        <nav id="menu">
+            <ul>
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/paginas/tarifas.html" class="activo">Tarifas</a></li>
+                <li><a href="/paginas/reservas.html">Reservas</a></li>
             </ul>    
         </nav>
-        <p class="site-name">Rueda Libre</p>
+
     </header>            
     <main>    
         <h1 class="page-title">Tarifas</h1>
@@ -111,25 +116,48 @@
                 </ul>
         </article>
     </main>   
-    <footer id="contacto">
-        <h2>Contáctanos</h2>
+        <!-- Pie de página -->
+<footer id="contacto">
+    <!-- Bloque 1: Marca / Información general -->
+    <div class="footer-col">
+        <h3>Rueda Libre</h3>
+        <p>Tu mejor opción para el alquiler de bicicletas y recorrer la ciudad con total libertad.</p>
+      
+    </div>
+
+    <!-- Bloque 2: Contacto -->
+    <div class="footer-col">
+        <h3>Contáctanos</h3>
         <ul>
             <li>
                 <a href="https://www.google.com/maps/place/Riwi/@6.2191063,-75.5861952,17z/data=!3m1!4b1!4m6!3m5!1s0x8e44293f0e114eef:0x99610cdd44c7c081!8m2!3d6.219101!4d-75.5836149!16s%2Fg%2F11l2x8f5ch?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
                     Ver ubicación en el mapa
                 </a>
             </li>
-            <li><a href="mailto:info@ruedalibre.com">Escríbenos a info@ruedalibre.com</a></li>
-            <li><a href="tel:+571234567890">Llámanos al +57 123 456 7890</a></li>
+            <li>
+                <a href="mailto:info@ruedalibre.com">
+                    Escríbenos a info@ruedalibre.com
+                </a>
+            </li>
+            <li>
+                <a href="tel:+571234567890">
+                    Llámanos al +57 123 456 7890
+                </a>
+            </li>
         </ul>
-        <h3>Horarios de atención:</h3>
+    </div>
+
+    <!-- Bloque 3: Horarios de atención -->
+    <div class="footer-col">
+        <h3>Horarios de atención</h3>
         <ul>
             <li>Lunes a viernes: 9:00 AM - 6:00 PM</li>
             <li>Sábados: 10:00 AM - 4:00 PM</li>
             <li>Domingos: Cerrado</li>
         </ul>
-        <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
-    </footer>
+    </div>
+    <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
+</footer>
     <a class="whatsapp-link" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
 </body>
 </html>

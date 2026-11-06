@@ -571,7 +571,67 @@ RESUMEN DE MINIRETOS Y OPORTUNIDADES DE MEJORA - RUEDA LIBRE
 
 ======================================================================
 
+BITÁCORA DE DISEÑO Y MAQUETACIÓN - PROYECTO RUEDA LIBRE
 
+
+
+1. Portada (Hero Section):
+
+- Modelo utilizado: CSS Grid
+
+- Justificación: Se requería una estructura de dos columnas simétricas (unidades fr) con el contenido de texto alineado verticalmente al centro frente a la imagen principal de la bicicleta. Grid maneja la distribución bidimensional de forma limpia y directa.
+
+
+
+2. Galería ("Nuestras Rutas" / "Nuestra Flota"):
+
+- Modelo utilizado: CSS Grid
+
+- Justificación: Se implementó una cuadrícula adaptable (repeat o auto-fit) para asegurar una distribución uniforme de tres tarjetas en una fila en pantallas grandes y una adaptación automática a columnas flexibles según el espacio.
+
+
+
+3. Reservas (Estructura Principal):
+
+- Modelo utilizado: CSS Grid
+
+- Justificación: Para cumplir con la proporción exacta de 2:1 (dos partes para el formulario y una parte para la sección de información lateral de ayuda), CSS Grid con la notación `2fr 1fr` ofrece el control de proporciones más preciso sin alterar los elementos internos.
+
+
+
+4. Fila del Formulario (Documento y Teléfono):
+
+- Modelo utilizado: CSS Grid
+
+- Justificación: Se usó `grid-template-columns: 1fr 1fr` para colocar los dos campos cortos relacionados (número de documento y teléfono) exactamente en la misma fila con un espacio uniforme (gap).
+
+
+
+5. Encabezado (Header y Navegación):
+
+- Modelo utilizado: Flexbox
+
+- Justificación: El encabezado y el menú de navegación manejan una alineación unidimensional (alinear el logotipo a un lado y los elementos del menú al otro, pasando de vertical a horizontal mediante media queries). Flexbox es el modelo ideal para la distribución en una sola dirección y la adaptabilidad de elementos de texto/enlaces.
+
+
+
+6. Pie de Página (Footer):
+
+- Modelo utilizado: Flexbox
+
+- Justificación: Permite distribuir los bloques de información institucionales, de contacto y de horarios de manera flexible adaptándose al ancho disponible (wrap) y alineando los elementos de forma ordenada.
+
+
+
+---
+
+Comandos ejecutados para control de versiones:
+
+- git add .
+
+- git commit -m "docs: actualizar bitácora de diseño con justificación de Flexbox y Grid"
+
+- git push origin main
 
 
 

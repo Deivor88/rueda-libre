@@ -9,105 +9,135 @@
 </head>
 <body>
     <header>
-        <img src="../img/logo.png" alt="Logo de Rueda Libre" class="logo">
-        <nav>
-            <ul id="menu">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="tarifas.html">Tarifas</a></li>
-                <li><a href="reservas.html" class="activo">Reservas</a></li>
+        <!-- Logo y nombre del sitio al lado izquierdo -->
+        <div class="logo-container">
+            <img src="../img/logo.png" alt="Logo de Rueda Libre" class="logo">
+            <p class="site-name">RUEDA LIBRE</p>
+        </div>
+        <!-- Menú de navegación lado derecho -->
+        <nav id="menu">
+            <ul>
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/paginas/tarifas.html">Tarifas</a></li>
+                <li><a href="/paginas/reservas.html" class="activo">Reservas</a></li>
             </ul>    
         </nav>
-        <p class="site-name">Rueda Libre</p>
     </header> 
     <main>  
         <h1 class="page-title">Reservas</h1>
-            <p>Realiza tu reserva de bicicletas de manera rápida y sencilla. Completa el formulario a continuación con tus datos y preferencias, y nuestro equipo se pondrá en contacto contigo para confirmar tu reserva y brindarte toda la información necesaria para disfrutar de tu experiencia sobre dos ruedas en Medellín.</p>
-        <section id="reservas">
-            <h2>Formulario de reserva</h2>
-            <form action="../procesar_reserva.php" method="post">
-
-                <!-- Grupo 1: Tus datos -->
-                <fieldset>
-                     <legend>Tus datos</legend>
+        <p>Realiza tu reserva de bicicletas de manera rápida y sencilla. Completa el formulario a continuación con tus datos y preferencias, y nuestro equipo se pondrá en contacto contigo para confirmar tu reserva y brindarte toda la información necesaria para disfrutar de tu experiencia sobre dos ruedas en Medellín.</p>
+        
+        <!-- INICIO DEL CONTENEDOR 2:1 -->
+        <div class="reservas-container">
             
-                        <label for="nombre">Nombre completo:</label><br><input type="text" id="nombre" name="nombre" required>
+            <!-- Columna 1 (Formulario - ocupa 2 partes) -->
+            <section id="reservas" class="formulario-section">
+                <h2>Formulario de reserva</h2>
+                <form action="../procesar_reserva.php" method="post">
+
+                    <!-- Grupo 1: Tus datos -->
+                    <fieldset>
+                        <legend>Tus datos</legend>
+        
+                        <label for="nombre">Nombre completo:</label><br>
+                        <input type="text" id="nombre" name="nombre" required>
                         <br>
-                        <label for="documento">Número de documento:</label><br>
-                        <input type="text" id="documento" name="documento" required inputmode="numeric" pattern="[0-9]{6,10}" placeholder="Ej: 123456789">
+        
+                        <!-- CONTENEDOR DE DOS CAMPOS EN LA MISMA FILA -->
+                         <div class="form-row">
+                            <div>
+                                <label for="documento">Número de documento:</label>
+                                <input type="text" id="documento" name="documento" required inputmode="numeric" pattern="[0-9]{6,10}" placeholder="Ej: 123456789">
+                            </div>
+                            <div>
+                                <label for="telefono">Teléfono:</label>
+                                <input type="tel" id="telefono" name="telefono" required inputmode="numeric" pattern="^3[0-9]{9}$" placeholder="Ej: 3123456789">
+                            </div>
+                        </div>
                         <br>
+        
                         <label for="email">Correo electrónico:</label><br>
                         <input type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
-                        <br>
-                        <label for="telefono">Teléfono:</label><br>
-                        <input type="tel" id="telefono" name="telefono" required inputmode="numeric" pattern="^3[0-9]{9}$" placeholder="Ej: 3123456789">
-                </fieldset>
-
-                <br>
-
-                <!-- Grupo 2: Tu alquiler -->
-                <fieldset>
-                    <legend>Tu alquiler</legend>
-            
-                        <label for="tipo_bici">Tipo de bicicleta:</label><br>
-                         <select id="tipo_bici" name="tipo_bici" required>
-                            <option value="urbana">Bicicleta Urbana</option>
-                            <option value="montana">Bicicleta de Montaña</option>
-                            <option value="electrica">Bicicleta Eléctrica</option>
-                        </select>
-                        <br>
-                         <label for="plan">Plan de alquiler:</label><br>
-                         <select id="plan" name="plan" required>
-                            <option value="hora">Alquiler por Hora</option>
-                            <option value="mediodia">Alquiler por Medio Día (4 horas)</option>
-                            <option value="dia">Alquiler por Día Completo</option>
-                        </select>
-                        <br>
-                        <label for="recorrido">Recorrido:</label>
-                        <div class="radio-container">
-                            <input type="radio" name="aceptarecorrido" id="aceptar" required>
-                            <label for="aceptar">Acepta recorrido</label>
-                        </div>
-                        <br>
-                        <div class="radio-container">
-                            <input type="radio" name="aceptarecorrido" id="rechazar" required>
-                            <label for="rechazar">Rechaza recorrido</label>
-                        </div>
-                        <br>
-                        <label for="recorrido">Tipo de recorrido:</label><br>
-                         <select id="recorrido" name="recorrido" required>
-                            <option value="rio-y-parques12k">Río y Parques (12 km)</option>
-                            <option value="sabores-de-barrio">Sabores de Barrio</option>
-                            <option value="rio-y-parques25k">Río y Parques (25 km)</option>
-                            <option value="sin-recorrido">Sin recorrido</option>
-                        </select>
-                        <br>
-                        <label for="bicicletas">Cantidad de bicicletas:</label><br>
-                        <input type="number" id="bicicletas" name="bicicletas" min="1" max="6" value="1" required>
-                        <br>
-                        <label for="fecha">Fecha de reserva:</label><br>
-                        <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-11-31">
-                        <br>
-                </fieldset>
+                    </fieldset>
 
                     <br>
 
-                <!-- Grupo 3: Confirmación -->
-                 
-                <fieldset>
-                    <legend>Confirmación</legend>
+                    <!-- Grupo 2: Tu alquiler -->
+                    <fieldset>
+                        <legend>Tu alquiler</legend>
+                
+                            <label for="tipo_bici">Tipo de bicicleta:</label><br>
+                             <select id="tipo_bici" name="tipo_bici" required>
+                                <option value="urbana">Bicicleta Urbana</option>
+                                <option value="montana">Bicicleta de Montaña</option>
+                                <option value="electrica">Bicicleta Eléctrica</option>
+                            </select>
+                            <br>
+                             <label for="plan">Plan de alquiler:</label><br>
+                             <select id="plan" name="plan" required>
+                                <option value="hora">Alquiler por Hora</option>
+                                <option value="mediodia">Alquiler por Medio Día (4 horas)</option>
+                                <option value="dia">Alquiler por Día Completo</option>
+                            </select>
+                            <br>
+                            <label for="recorrido">Recorrido:</label>
+                            <div class="radio-container">
+                                <input type="radio" name="aceptarecorrido" id="aceptar" required>
+                                <label for="aceptar">Acepta recorrido</label>
+                            </div>
+                            <br>
+                            <div class="radio-container">
+                                <input type="radio" name="aceptarecorrido" id="rechazar" required>
+                                <label for="rechazar">Rechaza recorrido</label>
+                            </div>
+                            <br>
+                            <label for="recorrido">Tipo de recorrido:</label><br>
+                             <select id="recorrido" name="recorrido" required>
+                                <option value="rio-y-parques12k">Río y Parques (12 km)</option>
+                                <option value="sabores-de-barrio">Sabores de Barrio</option>
+                                <option value="rio-y-parques25k">Río y Parques (25 km)</option>
+                                <option value="sin-recorrido">Sin recorrido</option>
+                            </select>
+                            <br>
+                            <label for="bicicletas">Cantidad de bicicletas:</label><br>
+                            <input type="number" id="bicicletas" name="bicicletas" min="1" max="6" value="1" required>
+                            <br>
+                            <label for="fecha">Fecha de reserva:</label><br>
+                            <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-11-31">
+                            <br>
+                    </fieldset>
 
-                         <textarea name="comentarios" id="comentarios" rows="4" cols="50" maxlength="300" placeholder="Comentarios adicionales (opcional)"></textarea>
+                    <br>
 
-                            <!-- Contenedor añadido para activar la alineación con Flexbox -->
-                        <div class="terminos-container">
-                            <input type="checkbox" id="terminos" name="terminos" required checked>
-                            <label for="terminos">Acepto los términos, condiciones y políticas de privacidad</label>
-                        </div>
-                         <button type="submit" class="btn-cta">Confirmar Alquiler</button>
-                </fieldset>
+                    <!-- Grupo 3: Confirmación -->
+                    <fieldset>
+                        <legend>Confirmación</legend>
 
-            </form>
-        </section>
+                             <textarea name="comentarios" id="comentarios" rows="4" cols="50" maxlength="300" placeholder="Comentarios adicionales (opcional)"></textarea>
+
+                            <div class="terminos-container">
+                                <input type="checkbox" id="terminos" name="terminos" required checked>
+                                <label for="terminos">Acepto los términos, condiciones y políticas de privacidad</label>
+                            </div>
+                             <button type="submit" class="btn-cta">Confirmar Alquiler</button>
+                    </fieldset>
+
+                </form>
+            </section>
+
+            <!-- Columna 2 (Información de contacto lateral - ocupa 1 parte) -->
+            <aside class="contacto-info-section">
+                <h2>¿Necesitas ayuda?</h2>
+                <p>Si tienes preguntas sobre las tarifas, los tipos de bicicletas o los recorridos guiados, contáctanos directamente:</p>
+                <ul>
+                    <li><strong>Teléfono:</strong> +57 123 456 7890</li>
+                    <li><strong>Correo:</strong> info@ruedalibre.com</li>
+                    <li><strong>Horario:</strong> Lun - Sáb: 9:00 AM - 6:00 PM</li>
+                </ul>
+            </aside>
+
+        </div>
+        <!-- FIN DEL CONTENEDOR 2:1 -->
     </main>
     <footer id="contacto">
         <h2>Contáctanos</h2>
