@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @theme {
+  --spacing: 0.25rem;
+  --radius-component: 0.75rem;
+
   --color-fondo-principal: #0a1216;
   --color-azul-profundo: #123040;
   --color-azul-verdoso: #1f5566;
@@ -19,7 +22,7 @@
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-fondo-principal;
+    @apply inline-flex items-center justify-center rounded-component px-6 py-3 font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-fondo-principal;
   }
 
   .btn-primary {
@@ -33,6 +36,31 @@
   .btn-outline {
     @apply border-2 border-azul-suave text-claro-hielo hover:border-naranja-pedal hover:bg-naranja-pedal hover:text-fondo-principal focus-visible:ring-claro-hielo;
   }
+
+  .card {
+    @apply overflow-hidden rounded-component border border-azul-verdoso/50 bg-azul-profundo shadow-glow-teal transition-[border-color,box-shadow] duration-300 hover:border-azul-suave hover:shadow-glow-blue;
+  }
+
+  .alert {
+    @apply rounded-component border-l-4 p-4;
+  }
+
+  .alert-info {
+    @apply border-azul-suave bg-azul-suave/10;
+  }
+
+  .alert-success {
+    @apply border-verde-ruta bg-verde-ruta/10;
+  }
+
+  .alert-warning {
+    @apply border-naranja-pedal bg-naranja-pedal/10;
+  }
+
+  .input {
+    @apply w-full rounded-component border border-azul-verdoso bg-fondo-principal px-4 py-3 text-claro-hielo placeholder:text-claro-hielo/45 transition-colors focus-visible:border-azul-suave focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-suave focus-visible:ring-offset-2 focus-visible:ring-offset-fondo-principal;
+  }
 }
 
 @source "../index.html";
+@source "../componentes.html";

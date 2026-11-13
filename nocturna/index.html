@@ -19,7 +19,10 @@
                 <span class="text-xs font-semibold uppercase tracking-widest text-azul-suave">Rueda Libre</span>
             </span>
         </a>
-        <nav class="font-heading text-sm font-semibold">
+        <nav class="flex items-center gap-6 font-heading text-sm font-semibold">
+            <a href="componentes.html" class="rounded-component text-claro-hielo/80 transition-colors hover:text-azul-suave focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-suave focus-visible:ring-offset-4 focus-visible:ring-offset-azul-profundo">
+                Componentes
+            </a>
             <a href="../index.html" class="rounded text-claro-hielo/80 transition-colors hover:text-azul-suave focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-suave focus-visible:ring-offset-4 focus-visible:ring-offset-azul-profundo">
                 <span aria-hidden="true">☼</span> Rueda Libre
             </a>
@@ -57,12 +60,12 @@
             </div>
 
             <div class="space-y-8">
-                <article class="overflow-hidden rounded-2xl border border-azul-verdoso/50 bg-azul-profundo shadow-glow-teal transition-[border-color,box-shadow] duration-300 hover:border-azul-suave hover:shadow-glow-blue">
+                <article class="card">
                     <img src="../img/luces_centro.png" alt="Mapa de una ruta ciclista en Medellín" class="h-56 w-full object-cover">
                     <div class="p-6 sm:p-8">
                         <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
                             <h3 class="font-heading text-2xl font-bold">Luces del Centro</h3>
-                            <span class="rounded-full bg-verde-ruta/15 px-3 py-1 text-sm font-bold text-verde-ruta">Fácil</span>
+                            <span class="rounded-component bg-verde-ruta/15 px-3 py-1 text-sm font-bold text-verde-ruta">Fácil</span>
                         </div>
                         <dl class="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3">
                             <div>
@@ -83,17 +86,20 @@
                                 <p class="text-sm font-semibold text-claro-hielo/70">Precio por persona</p>
                                 <p class="mt-1 font-heading text-3xl font-extrabold text-naranja-pedal">$55.000</p>
                             </div>
-                            <a href="../paginas/reservas.html" class="btn btn-primary w-full sm:w-auto">Reservar esta ruta</a>
+                            <div class="flex flex-col gap-3 sm:flex-row">
+                                <a href="../paginas/reservas.html" class="btn btn-primary w-full sm:w-auto">Reservar esta ruta</a>
+                                <a href="componentes.html" class="btn btn-outline w-full sm:w-auto">Ver componentes</a>
+                            </div>
                         </div>
                     </div>
                 </article>
 
-                <article class="overflow-hidden rounded-2xl border border-azul-verdoso/50 bg-azul-profundo shadow-glow-teal transition-[border-color,box-shadow] duration-300 hover:border-azul-suave hover:shadow-glow-blue">
+                <article class="card">
                     <img src="../img/miradores.png" alt="Ciclista recorriendo una vía con vista de Medellín" class="h-56 w-full object-cover">
                     <div class="p-6 sm:p-8">
                         <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
                             <h3 class="font-heading text-2xl font-bold">Miradores de la Ciudad</h3>
-                            <span class="rounded-full bg-azul-suave/15 px-3 py-1 text-sm font-bold text-azul-suave">Medio</span>
+                            <span class="rounded-component bg-azul-suave/15 px-3 py-1 text-sm font-bold text-azul-suave">Medio</span>
                         </div>
                         <dl class="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3">
                             <div>
@@ -114,17 +120,20 @@
                                 <p class="text-sm font-semibold text-claro-hielo/70">Precio por persona</p>
                                 <p class="mt-1 font-heading text-3xl font-extrabold text-naranja-pedal">$75.000</p>
                             </div>
-                            <a href="../paginas/reservas.html" class="btn btn-primary w-full sm:w-auto">Reservar esta ruta</a>
+                            <div class="flex flex-col gap-3 sm:flex-row">
+                                <a href="../paginas/reservas.html" class="btn btn-primary w-full sm:w-auto">Reservar esta ruta</a>
+                                <a href="componentes.html" class="btn btn-outline w-full sm:w-auto">Ver componentes</a>
+                            </div>
                         </div>
                     </div>
                 </article>
 
-                <article class="overflow-hidden rounded-2xl border border-azul-verdoso/50 bg-azul-profundo shadow-glow-teal transition-[border-color,box-shadow] duration-300 hover:border-azul-suave hover:shadow-glow-blue">
+                <article class="card">
                     <img src="../img/luna_palmas.png" alt="Ciclista recorriendo un sendero de montaña" class="h-56 w-full object-cover">
                     <div class="p-6 sm:p-8">
                         <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
                             <h3 class="font-heading text-2xl font-bold">Luna en Las Palmas</h3>
-                            <span class="rounded-full bg-naranja-pedal/15 px-3 py-1 text-sm font-bold text-naranja-pedal">Difícil</span>
+                            <span class="rounded-component bg-naranja-pedal/15 px-3 py-1 text-sm font-bold text-naranja-pedal">Difícil</span>
                         </div>
                         <dl class="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3">
                             <div>
@@ -145,7 +154,10 @@
                                 <p class="text-sm font-semibold text-claro-hielo/70">Precio por persona</p>
                                 <p class="mt-1 font-heading text-3xl font-extrabold text-naranja-pedal">$95.000</p>
                             </div>
-                            <a href="../paginas/reservas.html" class="btn btn-primary w-full sm:w-auto">Reservar esta ruta</a>
+                            <div class="flex flex-col gap-3 sm:flex-row">
+                                <a href="../paginas/reservas.html" class="btn btn-primary w-full sm:w-auto">Reservar esta ruta</a>
+                                <a href="componentes.html" class="btn btn-outline w-full sm:w-auto">Ver componentes</a>
+                            </div>
                         </div>
                     </div>
                 </article>

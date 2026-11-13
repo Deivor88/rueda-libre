@@ -647,6 +647,17 @@ Comandos ejecutados para control de versiones:
 
 - Los botones principal, secundario y de contorno tienen estados `hover` y `focus-visible`; el anillo visible reemplaza el contorno nativo al recibir foco por teclado.
 
+---
+
+8. Reglas del kit de componentes:
+
+- Radio común: `0.75rem` (`rounded-component`) para botones, cards, alertas, campos de formulario y etiquetas de nivel.
+
+- Espaciado: escala base de Tailwind de `0.25rem` por unidad, aplicada de forma consistente con utilidades como `gap-4`, `p-4`, `p-6` y `space-y-6`.
+
+- Colores: paleta compartida definida en `src/input.css`; azul suave para información, verde para éxito y naranja para advertencias, siempre acompañados por texto explícito.
+
+- Los botones, cards, alertas y campos usan clases compartidas del kit. La página `componentes.html` reúne sus variantes para revisión.
 
 
 
