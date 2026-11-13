@@ -1,5 +1,7 @@
 {
   "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./src/output.css --minify && tailwindcss -i ./src/landing.input.css -o ./src/landing.min.css --minify",
+    "watch:landing": "tailwindcss -i ./src/landing.input.css -o ./src/landing.min.css --minify --watch=always",
     "watch": "tailwindcss -i ./src/input.css -o ./src/output.css --watch=always"
   },
   "devDependencies": {

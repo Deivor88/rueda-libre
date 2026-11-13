@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Descubre Medellín a tu ritmo con Rueda Libre. Ofrecemos alquiler de bicicletas urbanas y de montaña, rutas guiadas y el mejor servicio para explorar la ciudad.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <title>Rueda Libre | Inicio</title>
 </head>
@@ -21,7 +22,7 @@
                 <li><a href="index.html" class="activo">Inicio</a></li>
                 <li><a href="paginas/tarifas.html">Tarifas</a></li>
                 <li><a href="paginas/reservas.html">Reservas</a></li>
-                <li><a href="nocturna/index.html">⏾ Nocturna</a></li>
+                <li><a href="nocturna/index.html">Rueda Nocturna</a></li>
             </ul>    
         </nav>
         
@@ -29,6 +30,56 @@
     
     <main>
         <h1 class="page-title">Inicio</h1>
+        <div id="campanaCarousel" class="carousel slide campana-carousel" data-bs-ride="carousel" data-bs-interval="7000" aria-label="Campañas de Rueda Libre">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#campanaCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1: bicicletas"></button>
+                <button type="button" data-bs-target="#campanaCarousel" data-bs-slide-to="1" aria-label="Diapositiva 2: bicicletas eléctricas"></button>
+                <button type="button" data-bs-target="#campanaCarousel" data-bs-slide-to="2" aria-label="Diapositiva 3: rutas"></button>
+                <button type="button" data-bs-target="#campanaCarousel" data-bs-slide-to="3" aria-label="Diapositiva 4: Rueda Nocturna"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/bicicleta.png" class="d-block w-100" alt="Bicicleta disponible para alquilar">
+                    <div class="carousel-caption">
+                        <h2>Pedalea a tu ritmo</h2>
+                        <p>Encuentra la bicicleta ideal para recorrer Medellín.</p>
+                        <a href="paginas/reservas.html" class="btn-cta">Reserva ahora</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/bicicletaelectrica.png" class="d-block w-100" alt="Bicicleta eléctrica para recorrer la ciudad">
+                    <div class="carousel-caption">
+                        <h2>Más lejos, con menos esfuerzo</h2>
+                        <p>Conoce nuestras bicicletas eléctricas y tarifas.</p>
+                        <a href="paginas/tarifas.html" class="btn-cta">Ver tarifas</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/ruta.png" class="d-block w-100" alt="Ruta para recorrer Medellín en bicicleta">
+                    <div class="carousel-caption">
+                        <h2>Descubre Medellín sobre dos ruedas</h2>
+                        <p>Elige una ruta y disfruta la ciudad a tu manera.</p>
+                        <a href="paginas/tarifas.html#recorrido" class="btn-cta">Explora las rutas</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/portada_ruedanocturna.png" class="d-block w-100" alt="Experiencia ciclista nocturna en Medellín">
+                    <div class="carousel-caption">
+                        <h2>Rueda Nocturna</h2>
+                        <p>Descubre Medellín bajo las estrellas en nuestra campaña nocturna.</p>
+                        <a href="nocturna/index.html" class="btn-cta">Conoce la campaña</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#campanaCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Diapositiva anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#campanaCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Diapositiva siguiente</span>
+            </button>
+        </div>
         <!-- Portada de Inicio / Hero Section -->
 <section class="portada">
     <div class="portada-texto">
@@ -255,5 +306,6 @@
     <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
 </footer>
     <a class="whatsapp-link" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
 </body>
 </html>

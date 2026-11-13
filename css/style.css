@@ -151,6 +151,49 @@ main {
     text-align: center;
 }
 
+.campana-carousel {
+    margin-bottom: var(--space-lg);
+}
+
+.campana-carousel .carousel-item img {
+    height: clamp(18rem, 42vw, 30rem);
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+.campana-carousel .carousel-caption {
+    right: 12%;
+    bottom: 2rem;
+    left: 12%;
+}
+
+.campana-carousel .carousel-caption h2,
+.campana-carousel .carousel-caption p {
+    color: var(--blanco);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
+}
+
+.campana-carousel .carousel-caption h2 {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+.campana-carousel .carousel-caption .btn-cta {
+    margin: 0 auto;
+}
+
+@media (max-width: 520px) {
+    .campana-carousel .carousel-caption {
+        right: 10%;
+        bottom: 1.75rem;
+        left: 10%;
+        padding-bottom: 0;
+    }
+
+    .campana-carousel .carousel-caption p {
+        font-size: 0.9rem;
+    }
+}
+
 /* --- Portada de Inicio en 2 Columnas con Grid y fr --- */
 .portada {
     display: grid;

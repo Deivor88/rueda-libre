@@ -22,12 +22,16 @@
 }
 
 @layer components {
-  .btn {
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline {
     @apply inline-flex items-center justify-center rounded-component px-6 py-3 font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-crema-claro;
   }
 
   @variant dark {
-    .btn {
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline {
       @apply focus-visible:ring-offset-texto-oscuro;
     }
   }
@@ -103,3 +107,4 @@
 
 @source "../index.html";
 @source "../componentes.html";
+@source not "../bootstrap.html";

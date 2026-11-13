@@ -723,4 +723,100 @@ Contraste verificado con la fórmula WCAG de luminancia relativa (AA para texto 
 | Naranja Pedal `#F39A2B` | Crema Claro `#FAF2C9` | 1.97:1 | No cumple como texto; se conserva como fondo/acento con Texto Oscuro. |
 
 
+---
+
+11. Legibilidad del HTML y comparativa Bootstrap vs Tailwind:
+
+Auditoría de clases en `nocturna/index.html` antes de refactorizar los botones:
+
+| Elementos | Lista o patrón repetido | Apariciones |
+|---|---|---:|
+| Botones principales | `btn btn-primary` más utilidades de ancho responsivo | 6 |
+| Botones de contorno | `btn btn-outline` más utilidades de ancho responsivo | 2 |
+| Etiquetas del formulario | `mb-2 block text-sm font-semibold` | 7 |
+| Campos del formulario | `input` | 7 |
+| Metadatos de ruta (`dt`) | `text-xs font-semibold uppercase tracking-wider text-gris-asfalto dark:text-crema-claro/70` | 9 |
+| Valores de ruta (`dd`) | `mt-1 text-lg font-bold` | 9 |
+| Niveles de ruta | Fácil, Medio y Difícil; tres listas distintas con colores propios | 3 |
+| Cards | La clase reutilizable `card` aparece en 3 cards de ruta, 4 pasos y la inscripción | 8 |
+
+- Los botones se consolidaron en tres clases propias dentro de `@layer components`: `.btn-primary`, `.btn-secondary` y `.btn-outline`. Las reglas comunes de layout, espaciado, tipografía y foco se aplican al selector compartido; no se creó una cuarta clase `.btn`.
+- Las etiquetas del formulario quedaron ordenadas como layout, espaciado y tipografía (`block mb-2 text-sm font-semibold`). Se ordenaron las clases de los elementos de la landing en las categorías layout, espaciado, tipografía, color y estados.
+- Se conservaron las cards del kit y se siguió reutilizando `.card`; no se crearon variantes de card. Los campos siguen usando la clase común `.input`.
+- El script `npm run build` minifica el CSS compartido y crea un bundle de landing que excluye las fuentes HTML de componentes y Bootstrap. El archivo minificado de la landing es `nocturna/src/landing.min.css` y pesa **31,600 bytes**. El CSS compartido para la página de componentes pesa 33,091 bytes. `npm run watch:landing` mantiene actualizado el bundle específico mientras se trabaja.
+
+Para comparar ambas implementaciones con el mismo contenido, se creó `nocturna/bootstrap.html` con la landing, la paleta de marca y el tema oscuro, usando Bootstrap 5.3.9. Se enlazó desde la navegación principal como “Nocturna · Bootstrap”; la página también enlaza a la versión Tailwind. Bootstrap CSS y su bundle JS con Popper se cargan desde jsDelivr.
+
+Medición de recursos del navegador:
+
+| Versión y recurso | Bytes transferidos del cuerpo | Bytes descomprimidos |
+|---|---:|---:|
+| Tailwind: `landing.min.css` | 31,600 | 31,600 |
+| Bootstrap 5.3.9: CSS | 33,039 | 232,360 |
+| Bootstrap 5.3.9: JS bundle | 21,202 | 80,669 |
+| Bootstrap: CSS + JS | **54,241** | **313,029** |
+
+- Las mediciones se tomaron con Resource Timing del navegador; Bootstrap se midió sin caché. El CDN entrega sus recursos comprimidos y el servidor local sirve el CSS Tailwind minificado sin compresión HTTP, así que los bytes transferidos describen esta prueba concreta, no una comparación bajo condiciones idénticas.
+- En la comparación CSS-a-CSS, Bootstrap transfirió 1,439 bytes más que Tailwind (4.6% de los 31,600 bytes de Tailwind). Como referencia, el CSS y el JS de Bootstrap sumaron 54,241 bytes transferidos (313,029 descomprimidos), pero ese total incluye el bundle para componentes interactivos y no es una comparación equivalente de hojas de estilo. La página Tailwind no descarga un framework JavaScript externo; su demostración de formulario usa un script inline.
+
+Comparativa basada en la implementación y las mediciones de este proyecto:
+
+| Criterio | Bootstrap 5.3.9 | Tailwind CSS 4.3.5 |
+|---|---|---|
+| Curva de aprendizaje | Rápido para montar layouts y componentes conocidos; hay que aprender la API y las convenciones del framework. | Las utilidades dan control directo, pero las listas largas pueden ser menos legibles; extraer botones repetidos con `@apply` mejora el HTML. |
+| Personalización | Requiere variables y reglas de override para adaptar a fondo la paleta y el aspecto propio. | El tema con `@theme`, los breakpoints, estados y utilidades facilitó ajustar la marca y el modo oscuro. |
+| Tamaño final | CSS: 33,039 bytes transferidos (232,360 descomprimidos). El bundle JS opcional para componentes interactivos añadió 21,202 bytes. | CSS minificado de la landing: 31,600 bytes; el layout no requiere un bundle JavaScript externo. |
+| Casos de uso | Conveniente para prototipos, sitios con patrones convencionales o cuando se aprovechan componentes JS como el menú colapsable. | Conveniente para landing pages y productos que necesitan identidad visual, responsive y estados muy específicos. |
+
+Recomendación para Rueda Libre:
+
+- Recomiendo Tailwind CSS para la siguiente versión de la landing de Rueda Libre. La paleta, las fuentes, los breakpoints y el tema oscuro se adaptaron directamente al tema del proyecto; en esta medición, su CSS generado también fue ligeramente menor que el CSS de Bootstrap. La elección se basa sobre todo en el control visual y en evitar cargar componentes no usados, no en una diferencia grande de tamaño.
+- Bootstrap sigue siendo una buena opción si se prioriza construir pantallas administrativas o prototipos con componentes estandarizados. La comparación de tamaño es específica a estas dos páginas: el CDN de Bootstrap ya sirve contenido comprimido y el servidor local de medición no comprime Tailwind.
+
+Validación de la versión Bootstrap: la navegación colapsable se abre en móvil; rutas 1/2/3 columnas y pasos 1/2/4 en 360/768/1024/1280 px; sin desbordamiento horizontal en esos anchos. Se verificaron fondos, cards, botones y campos en modo claro y oscuro.
+
+
+---
+
+12. Formulario de inscripción a rutas en la landing:
+
+- Se añadió la sección “Inscríbete a una ruta” en `index.html`, agrupada en los conjuntos “Tus datos”, “Detalles de la salida” y “Confirmación”; la bicicleta propia se presenta en su propio grupo de opciones.
+- Los nueve datos requeridos tienen controles con etiquetas asociadas. Nombre exige 3 caracteres; celular valida exactamente 10 dígitos que empiezan por 3; acompañantes acepta enteros de 0 a 3. Ruta, día (jueves, viernes o sábado), experiencia y bicicleta propia tienen opciones limitadas; la aceptación de condiciones es obligatoria.
+- Se reutilizó la clase `input` del kit en los campos y se añadieron estilos equivalentes en `css/style.css` para la landing, incluidos foco visible, dos columnas desde 768 px y variante oscura según la preferencia del sistema.
+
+Pruebas en navegador:
+
+| Caso | Resultado |
+|---|---|
+| Formulario vacío | No válido por campos obligatorios. |
+| Datos inválidos | Rechaza nombre de 2 caracteres, correo inválido, celular que no inicia por 3 y acompañantes fuera de rango. |
+| Datos completos | Válido con todos los campos completados y condiciones aceptadas. |
+| Límites de acompañantes | 0 y 3 válidos; -1 y 4 no válidos. |
+| Teclado y responsive | Recorrido Tab alcanza los controles en orden, foco visible; dos columnas desde md, una en móvil y sin desbordamiento horizontal a 390 px. |
+| Modo oscuro | Campos con fondo oscuro y texto claro. |
+
+Cronómetro de 40 minutos: inicio 12:54:19; fin 12:58:42; tiempo real 00:04:23.
+
+Pendiente para recibir inscripciones: este repositorio no contiene un endpoint de recepción; la página existente de reservas referencia `procesar_reserva.php`, que tampoco está presente. El formulario aplica validación nativa, pero debe conectarse a un servicio de envío antes de publicar para que los datos lleguen al cliente.
+
+Nota posterior: por solicitud del usuario, se retiró la sección de inscripción del `index.html` principal y se eliminaron sus estilos específicos. La sección 12 queda como registro histórico de la implementación y sus pruebas.
+
+---
+
+13. Integración de Rueda Nocturna con el sitio principal:
+
+- Se uniformó la navegación de Inicio, Tarifas y Reservas con el enlace “Rueda Nocturna” hacia `nocturna/index.html` usando rutas relativas correctas.
+- Como el sitio principal existente no tenía Bootstrap ni carrusel, se conservó su estructura y se añadió Bootstrap 5.3.9 a Inicio para un carrusel de cuatro diapositivas. La cuarta promociona Rueda Nocturna; las demás llevan a Reservas, Tarifas y Recorridos.
+- En la landing Tailwind, el logo ya enlazaba al inicio (`../index.html`); se comprobó su destino y se añadió “Reserva tu bici” hacia `../paginas/reservas.html`. Se corrigió el rótulo “Bootstrap” en el enlace a su implementación alternativa y se regeneró el CSS para estilizar el nuevo botón.
+- Se compararon las variables de Bootstrap con `@theme`: azul `#16495B`, crema `#FAF2C9`, verde `#1E7A4F`, naranja `#F39A2B`, gris `#5B6470`, amarillo `#FFD166`, texto `#12242D` y blanco `#FFFFFF`. Ambas versiones usan Montserrat para encabezados y Open Sans para texto. Los pies comparten mapa, correo `info@ruedalibre.com`, teléfono `+57 123 456 7890` y horarios; se añadió el enlace al mapa al pie Bootstrap.
+
+Validación:
+
+- En local, el carrusel carga sus cuatro imágenes, responde al indicador de la cuarta diapositiva y enlaza a la landing; el botón de reserva y el logo resuelven a las páginas esperadas.
+- Se comprobaron 55 enlaces y fragmentos internos en las cinco páginas principales/landing, sin destinos locales faltantes. En 390 px el carrusel no produce desbordamiento horizontal.
+- Las páginas publicadas de Inicio, Tarifas, Reservas y la landing Tailwind responden en GitHub Pages. Los cambios de esta tarea siguen locales y no están publicados; habrá que repetir la comprobación de la nueva navegación y carrusel después del despliegue.
+
+Cronómetro de 40 minutos: inicio 13:03:29; fin 13:13:49; tiempo real 00:10:20.
+
+
 
