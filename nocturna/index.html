@@ -26,8 +26,8 @@
         </nav>
     </header>
 
-    <main class="flex flex-1 flex-col items-center justify-center px-6 py-16 text-center">
-        <section class="w-full max-w-3xl" aria-labelledby="titulo-principal">
+    <main class="flex flex-1 flex-col items-center gap-20 px-6 py-16">
+        <section class="w-full max-w-3xl text-center" aria-labelledby="titulo-principal">
             <p class="mb-4 font-heading text-sm font-bold uppercase tracking-[0.25em] text-azul-suave">Medellín sobre dos ruedas</p>
             <h1 id="titulo-principal" class="font-heading text-4xl font-extrabold leading-tight sm:text-5xl">Rueda Nocturna</h1>
             <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-claro-hielo/85">
@@ -44,6 +44,111 @@
                 <button type="button" class="btn btn-outline">
                     Contorno
                 </button>
+            </div>
+        </section>
+
+        <section id="rutas" class="w-full max-w-3xl" aria-labelledby="titulo-rutas">
+            <div class="mb-8 text-center">
+                <p class="mb-2 font-heading text-sm font-bold uppercase tracking-[0.25em] text-azul-suave">Explora Medellín de noche</p>
+                <h2 id="titulo-rutas" class="font-heading text-3xl font-extrabold sm:text-4xl">Rutas</h2>
+                <p class="mx-auto mt-4 max-w-2xl leading-relaxed text-claro-hielo/75">
+                    Todas salen de la sede de Rueda Libre e incluyen bicicleta, casco, luces LED, chaleco reflectivo y guía.
+                </p>
+            </div>
+
+            <div class="space-y-8">
+                <article class="overflow-hidden rounded-2xl border border-azul-verdoso/50 bg-azul-profundo shadow-glow-teal transition-[border-color,box-shadow] duration-300 hover:border-azul-suave hover:shadow-glow-blue">
+                    <img src="../img/luces_centro.png" alt="Mapa de una ruta ciclista en Medellín" class="h-56 w-full object-cover">
+                    <div class="p-6 sm:p-8">
+                        <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
+                            <h3 class="font-heading text-2xl font-bold">Luces del Centro</h3>
+                            <span class="rounded-full bg-verde-ruta/15 px-3 py-1 text-sm font-bold text-verde-ruta">Fácil</span>
+                        </div>
+                        <dl class="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3">
+                            <div>
+                                <dt class="text-xs font-semibold uppercase tracking-wider text-claro-hielo/60">Distancia</dt>
+                                <dd class="mt-1 text-lg font-bold">10 km</dd>
+                            </div>
+                            <div>
+                                <dt class="text-xs font-semibold uppercase tracking-wider text-claro-hielo/60">Duración</dt>
+                                <dd class="mt-1 text-lg font-bold">2 h</dd>
+                            </div>
+                            <div class="col-span-2 sm:col-span-1">
+                                <dt class="text-xs font-semibold uppercase tracking-wider text-claro-hielo/60">Punto de encuentro</dt>
+                                <dd class="mt-1 text-lg font-bold">Sede Rueda Libre</dd>
+                            </div>
+                        </dl>
+                        <div class="mt-6 flex flex-col gap-5 border-t border-azul-verdoso/40 pt-5 sm:flex-row sm:items-end sm:justify-between">
+                            <div>
+                                <p class="text-sm font-semibold text-claro-hielo/70">Precio por persona</p>
+                                <p class="mt-1 font-heading text-3xl font-extrabold text-naranja-pedal">$55.000</p>
+                            </div>
+                            <a href="../paginas/reservas.html" class="btn btn-primary w-full sm:w-auto">Reservar esta ruta</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="overflow-hidden rounded-2xl border border-azul-verdoso/50 bg-azul-profundo shadow-glow-teal transition-[border-color,box-shadow] duration-300 hover:border-azul-suave hover:shadow-glow-blue">
+                    <img src="../img/miradores.png" alt="Ciclista recorriendo una vía con vista de Medellín" class="h-56 w-full object-cover">
+                    <div class="p-6 sm:p-8">
+                        <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
+                            <h3 class="font-heading text-2xl font-bold">Miradores de la Ciudad</h3>
+                            <span class="rounded-full bg-azul-suave/15 px-3 py-1 text-sm font-bold text-azul-suave">Medio</span>
+                        </div>
+                        <dl class="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3">
+                            <div>
+                                <dt class="text-xs font-semibold uppercase tracking-wider text-claro-hielo/60">Distancia</dt>
+                                <dd class="mt-1 text-lg font-bold">16 km</dd>
+                            </div>
+                            <div>
+                                <dt class="text-xs font-semibold uppercase tracking-wider text-claro-hielo/60">Duración</dt>
+                                <dd class="mt-1 text-lg font-bold">3 h</dd>
+                            </div>
+                            <div class="col-span-2 sm:col-span-1">
+                                <dt class="text-xs font-semibold uppercase tracking-wider text-claro-hielo/60">Punto de encuentro</dt>
+                                <dd class="mt-1 text-lg font-bold">Sede Rueda Libre</dd>
+                            </div>
+                        </dl>
+                        <div class="mt-6 flex flex-col gap-5 border-t border-azul-verdoso/40 pt-5 sm:flex-row sm:items-end sm:justify-between">
+                            <div>
+                                <p class="text-sm font-semibold text-claro-hielo/70">Precio por persona</p>
+                                <p class="mt-1 font-heading text-3xl font-extrabold text-naranja-pedal">$75.000</p>
+                            </div>
+                            <a href="../paginas/reservas.html" class="btn btn-primary w-full sm:w-auto">Reservar esta ruta</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="overflow-hidden rounded-2xl border border-azul-verdoso/50 bg-azul-profundo shadow-glow-teal transition-[border-color,box-shadow] duration-300 hover:border-azul-suave hover:shadow-glow-blue">
+                    <img src="../img/luna_palmas.png" alt="Ciclista recorriendo un sendero de montaña" class="h-56 w-full object-cover">
+                    <div class="p-6 sm:p-8">
+                        <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
+                            <h3 class="font-heading text-2xl font-bold">Luna en Las Palmas</h3>
+                            <span class="rounded-full bg-naranja-pedal/15 px-3 py-1 text-sm font-bold text-naranja-pedal">Difícil</span>
+                        </div>
+                        <dl class="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3">
+                            <div>
+                                <dt class="text-xs font-semibold uppercase tracking-wider text-claro-hielo/60">Distancia</dt>
+                                <dd class="mt-1 text-lg font-bold">22 km</dd>
+                            </div>
+                            <div>
+                                <dt class="text-xs font-semibold uppercase tracking-wider text-claro-hielo/60">Duración</dt>
+                                <dd class="mt-1 text-lg font-bold">3,5 h</dd>
+                            </div>
+                            <div class="col-span-2 sm:col-span-1">
+                                <dt class="text-xs font-semibold uppercase tracking-wider text-claro-hielo/60">Punto de encuentro</dt>
+                                <dd class="mt-1 text-lg font-bold">Sede Rueda Libre</dd>
+                            </div>
+                        </dl>
+                        <div class="mt-6 flex flex-col gap-5 border-t border-azul-verdoso/40 pt-5 sm:flex-row sm:items-end sm:justify-between">
+                            <div>
+                                <p class="text-sm font-semibold text-claro-hielo/70">Precio por persona</p>
+                                <p class="mt-1 font-heading text-3xl font-extrabold text-naranja-pedal">$95.000</p>
+                            </div>
+                            <a href="../paginas/reservas.html" class="btn btn-primary w-full sm:w-auto">Reservar esta ruta</a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
     </main>
