@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre Medellín a tu ritmo con Rueda Libre. Ofrecemos alquiler de bicicletas urbanas y de montaña, rutas guiadas y el mejor servicio para explorar la ciudad.">
+      <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'fondo-principal': '#0A1216',
+                        'azul-profundo': '#123040',
+                        'azul-verdoso': '#1F5566',
+                        'azul-suave': '#6BA4B8',
+                        'claro-hielo': '#D7F0F5',
+                        'naranja-pedal': '#F39A2B',
+                        'verde-ruta': '#2ECC71',
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow-teal': '0 0 25px rgba(31, 85, 102, 0.4)',
+                        'glow-blue': '0 0 25px rgba(107, 164, 184, 0.3)',
+                        'glow-orange': '0 0 20px rgba(243, 154, 43, 0.35)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-fondo-principal text-claro-hielo font-body antiliased min-h-screen flex flex-col selection-bg.azul-suave selection-text.fondo-claro">
+    <header class="sticky top-0 z-50 backdrop-blur-md border-b border-azul-verdoso/40 transition-all duration-300 bg-azul-profundo/90 shadow-glow-teal p-4 md:px-6 flex items-center justify-between">
+    
+    <!-- BLOQUE IZQUIERDO: Agrupamos Logo y Textos en un solo contenedor -->
+    <div class="flex items-center gap-3">
+        <!-- Logo -->
+        <img src="../img/logo_nocturno.png" alt="Logo Rueda Nocturna" class="h-14 w-14 rounded-full shadow-glow-blue object-cover">
+        
+        <!-- Nombre de la empresa -->
+        <!-- LOGO: REGRESA AL SITIO PRINCIPAL -->
+            <a
+                href="../index.html"
+                class="rounded-lg font-titulos text-xl font-black text-verde-ruta focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-azul-noche dark:text-verde-neon dark:focus-visible:outline-amarillo-farol">
+                <div class="flex flex-col">
+                    <span class="font-heading font-extrabold text-xl tracking-wider text-claro-hielo transition-colors duration-300">RUEDA NOCTURNA</span>
+                    <span class="text-xs font-semibold text-azul-suave tracking-widest uppercase">Rueda Libre</span>
+                </div>
+            </a>    
+    </div>
+    
+
+    <!-- BLOQUE DERECHO: Navegación enviada automáticamente al extremo opuesto -->
+    <nav class="hidden md:flex items-center gap-8 font-heading text-sm font-semibold">
+        <a href="../index.html" class="text-[#D7F0F5]/80 hover:text-[#6BA4B8] transition-colors duration-200 focus:outline-none focus:text-[#6BA4B8] flex items-center gap-2">
+            <span>☼</span> Rueda libre
+        </a>
+    </nav>
+
+</header>
+    <main class="flex-grow flex flex-col items-center justify-center p-6">
+        <!-- Título principal -->
+    <h1 class="text-2xl font-bold leading-none -mt-4">Rueda Nocturna</h1>
+        <p class="text-lg text-claro-hielo mb-8 text-center max-w-xl">Estamos trabajando en algo emocionante para los amantes de la bicicleta y la aventura nocturna. Mantente atento para más detalles sobre nuestra experiencia única en Medellín.</p>
+        <a href="#" class="bg-naranja-pedal hover:bg-naranja-pedal/90 text-fondo-principal font-semibold py-3 px-6 rounded shadow-glow-orange transition-all duration-300">Suscríbete para Actualizaciones</a>
+</body>
+</html>
