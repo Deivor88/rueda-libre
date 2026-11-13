@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="src/output.css">
 </head>
 <body class="flex min-h-screen flex-col bg-fondo-principal font-body text-claro-hielo antialiased selection:bg-azul-suave selection:text-fondo-principal">
-    <header class="sticky top-0 z-10 flex items-center justify-between border-b border-azul-verdoso/40 bg-azul-profundo/90 p-4 shadow-glow-teal backdrop-blur-md md:px-6">
+    <header class="sticky top-0 z-10 flex flex-col gap-3 border-b border-azul-verdoso/40 bg-azul-profundo/90 p-4 shadow-glow-teal backdrop-blur-md sm:flex-row sm:items-center sm:justify-between md:px-6">
         <a href="../index.html" class="flex items-center gap-3 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta focus-visible:ring-offset-4 focus-visible:ring-offset-azul-profundo">
             <img src="../img/logo_nocturno.png" alt="" class="h-14 w-14 rounded-full object-cover shadow-glow-blue">
             <span class="flex flex-col">
@@ -19,18 +19,21 @@
                 <span class="text-xs font-semibold uppercase tracking-widest text-azul-suave">Rueda Libre</span>
             </span>
         </a>
-        <nav class="flex items-center gap-6 font-heading text-sm font-semibold">
-            <a href="componentes.html" class="rounded-component text-claro-hielo/80 transition-colors hover:text-azul-suave focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-suave focus-visible:ring-offset-4 focus-visible:ring-offset-azul-profundo">
-                Componentes
+        <nav aria-label="Navegación principal" class="flex w-full items-center justify-between gap-4 font-heading text-xs font-semibold sm:w-auto sm:justify-start sm:gap-6 sm:text-sm">
+            <a href="#inicio" class="rounded-component text-claro-hielo/80 transition-colors hover:text-azul-suave focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-suave focus-visible:ring-offset-4 focus-visible:ring-offset-azul-profundo">
+                Inicio
             </a>
-            <a href="../index.html" class="rounded text-claro-hielo/80 transition-colors hover:text-azul-suave focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-suave focus-visible:ring-offset-4 focus-visible:ring-offset-azul-profundo">
-                <span aria-hidden="true">☼</span> Rueda Libre
+            <a href="#rutas" class="rounded-component text-claro-hielo/80 transition-colors hover:text-azul-suave focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-suave focus-visible:ring-offset-4 focus-visible:ring-offset-azul-profundo">
+                Rutas
+            </a>
+            <a href="#inscribete" class="rounded-component text-claro-hielo/80 transition-colors hover:text-azul-suave focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-suave focus-visible:ring-offset-4 focus-visible:ring-offset-azul-profundo">
+                Inscríbete
             </a>
         </nav>
     </header>
 
     <main class="flex flex-1 flex-col items-center gap-20 px-6 py-16">
-        <section class="w-full max-w-3xl text-center" aria-labelledby="titulo-principal">
+        <section id="inicio" class="w-full max-w-3xl scroll-mt-24 text-center" aria-labelledby="titulo-principal">
             <p class="mb-4 font-heading text-sm font-bold uppercase tracking-[0.25em] text-azul-suave">Medellín sobre dos ruedas</p>
             <h1 id="titulo-principal" class="font-heading text-4xl font-extrabold leading-tight sm:text-5xl">Rueda Nocturna</h1>
             <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-claro-hielo/85">
@@ -50,7 +53,7 @@
             </div>
         </section>
 
-        <section id="rutas" class="w-full max-w-3xl" aria-labelledby="titulo-rutas">
+        <section id="rutas" class="w-full max-w-3xl scroll-mt-24" aria-labelledby="titulo-rutas">
             <div class="mb-8 text-center">
                 <p class="mb-2 font-heading text-sm font-bold uppercase tracking-[0.25em] text-azul-suave">Explora Medellín de noche</p>
                 <h2 id="titulo-rutas" class="font-heading text-3xl font-extrabold sm:text-4xl">Rutas</h2>
@@ -163,6 +166,123 @@
                 </article>
             </div>
         </section>
+
+        <section id="inscribete" class="w-full max-w-3xl scroll-mt-24" aria-labelledby="titulo-inscripcion">
+            <div class="mb-8 text-center">
+                <p class="mb-2 font-heading text-sm font-bold uppercase tracking-[0.25em] text-azul-suave">Tu próxima aventura</p>
+                <h2 id="titulo-inscripcion" class="font-heading text-3xl font-extrabold sm:text-4xl">Inscríbete</h2>
+                <p class="mx-auto mt-4 max-w-2xl leading-relaxed text-claro-hielo/75">
+                    Completa tus datos para validar tu inscripción a una de nuestras rutas nocturnas.
+                </p>
+            </div>
+
+            <form id="form-inscripcion" class="card space-y-6 p-6 sm:p-8">
+                <div class="grid gap-5 md:grid-cols-2">
+                    <div>
+                        <label for="nombre-completo" class="mb-2 block text-sm font-semibold">Nombre completo</label>
+                        <input id="nombre-completo" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre y apellido" required class="input">
+                    </div>
+                    <div>
+                        <label for="correo" class="mb-2 block text-sm font-semibold">Correo electrónico</label>
+                        <input id="correo" name="correo" type="email" autocomplete="email" placeholder="nombre@ejemplo.com" required class="input">
+                    </div>
+                    <div>
+                        <label for="telefono" class="mb-2 block text-sm font-semibold">Teléfono</label>
+                        <input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="+57 300 123 4567" required class="input">
+                    </div>
+                    <div>
+                        <label for="ruta" class="mb-2 block text-sm font-semibold">Ruta</label>
+                        <select id="ruta" name="ruta" required class="input">
+                            <option value="" selected disabled>Selecciona una ruta</option>
+                            <option value="luces-del-centro">Luces del Centro</option>
+                            <option value="miradores-de-la-ciudad">Miradores de la Ciudad</option>
+                            <option value="luna-en-las-palmas">Luna en Las Palmas</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="dia-salida" class="mb-2 block text-sm font-semibold">Día de salida</label>
+                        <input id="dia-salida" name="dia-salida" type="date" required class="input">
+                    </div>
+                    <div>
+                        <label for="acompanantes" class="mb-2 block text-sm font-semibold">Número de acompañantes</label>
+                        <input id="acompanantes" name="acompanantes" type="number" min="0" step="1" value="0" required class="input">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="experiencia" class="mb-2 block text-sm font-semibold">Nivel de experiencia</label>
+                        <select id="experiencia" name="experiencia" required class="input">
+                            <option value="" selected disabled>Selecciona tu nivel</option>
+                            <option value="principiante">Principiante</option>
+                            <option value="intermedio">Intermedio</option>
+                            <option value="avanzado">Avanzado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="space-y-4 border-t border-azul-verdoso/40 pt-5">
+                    <label class="flex items-start gap-3 text-sm leading-relaxed">
+                        <input name="bicicleta-propia" type="checkbox" class="mt-1 h-4 w-4 accent-verde-ruta focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta focus-visible:ring-offset-2 focus-visible:ring-offset-azul-profundo">
+                        <span>Tengo bicicleta propia.</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm leading-relaxed">
+                        <input name="acepta-condiciones" type="checkbox" required class="mt-1 h-4 w-4 accent-verde-ruta focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta focus-visible:ring-offset-2 focus-visible:ring-offset-azul-profundo">
+                        <span>Acepto las condiciones de participación y seguridad de la ruta.</span>
+                    </label>
+                </div>
+
+                <p id="resultado-inscripcion" class="hidden rounded-component border border-verde-ruta/40 bg-verde-ruta/10 p-4 text-sm text-claro-hielo" role="status" aria-live="polite"></p>
+
+                <div class="flex flex-col gap-3 sm:flex-row">
+                    <button type="submit" class="btn btn-primary">Validar inscripción</button>
+                    <button type="reset" class="btn btn-outline">Limpiar formulario</button>
+                </div>
+            </form>
+        </section>
     </main>
+
+    <footer id="contacto" class="border-t border-azul-verdoso/50 bg-azul-profundo px-6 py-10">
+        <div class="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <section aria-labelledby="footer-marca">
+                <h2 id="footer-marca" class="font-heading text-xl font-bold text-claro-hielo">Rueda Nocturna</h2>
+                <p class="mt-3 leading-relaxed text-claro-hielo/70">Tu mejor opción para recorrer Medellín en bicicleta y disfrutar la ciudad bajo las estrellas.</p>
+            </section>
+
+            <section aria-labelledby="footer-contacto">
+                <h2 id="footer-contacto" class="font-heading text-lg font-bold">Contáctanos</h2>
+                <ul class="mt-3 space-y-2 text-sm text-claro-hielo/75">
+                    <li>
+                        <a class="transition-colors hover:text-azul-suave focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-suave" href="https://www.google.com/maps/place/Riwi/@6.2191063,-75.5861952,17z/data=!3m1!4b1!4m6!3m5!1s0x8e44293f0e114eef:0x99610cdd44c7c081!8m2!3d6.219101!4d-75.5836149!16s%2Fg%2F11l2x8f5ch?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Ver ubicación en el mapa</a>
+                    </li>
+                    <li><a class="transition-colors hover:text-azul-suave focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-suave" href="mailto:info@ruedalibre.com">Escríbenos a info@ruedalibre.com</a></li>
+                    <li><a class="transition-colors hover:text-azul-suave focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-suave" href="tel:+571234567890">Llámanos al +57 123 456 7890</a></li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="footer-horarios">
+                <h2 id="footer-horarios" class="font-heading text-lg font-bold">Horarios de atención</h2>
+                <ul class="mt-3 space-y-2 text-sm text-claro-hielo/75">
+                    <li>Lunes a viernes: 9:00 AM - 6:00 PM</li>
+                    <li>Sábados: 10:00 AM - 4:00 PM</li>
+                    <li>Domingos: Cerrado</li>
+                </ul>
+            </section>
+        </div>
+        <p class="mx-auto mt-8 max-w-5xl border-t border-azul-verdoso/40 pt-6 text-center text-sm text-claro-hielo/60">&copy; 2026 Rueda Nocturna. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const formInscripcion = document.getElementById("form-inscripcion");
+        const resultadoInscripcion = document.getElementById("resultado-inscripcion");
+
+        formInscripcion.addEventListener("submit", (event) => {
+            event.preventDefault();
+            resultadoInscripcion.textContent = "Datos validados correctamente. Esta demostración no envía la inscripción.";
+            resultadoInscripcion.classList.remove("hidden");
+        });
+
+        formInscripcion.addEventListener("reset", () => {
+            resultadoInscripcion.textContent = "";
+            resultadoInscripcion.classList.add("hidden");
+        });
+    </script>
 </body>
 </html>
