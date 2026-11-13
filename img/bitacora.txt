@@ -621,6 +621,11 @@ BITÁCORA DE DISEÑO Y MAQUETACIÓN - PROYECTO RUEDA LIBRE
 
 - Justificación: Permite distribuir los bloques de información institucionales, de contacto y de horarios de manera flexible adaptándose al ancho disponible (wrap) y alineando los elementos de forma ordenada.
 
+7. Sección "¿Cómo funciona?":
+
+- Modelo utilizado: CSS Grid
+
+- Justificación: Los cuatro pasos tienen la misma jerarquía y se presentan como una colección de tarjetas; Grid permite ordenarlos en cuatro columnas en pantallas amplias y reducir las columnas de forma adaptable en pantallas medianas y pequeñas.
 
 
 ---
