@@ -633,6 +633,20 @@ Comandos ejecutados para control de versiones:
 
 - git push origin main
 
+---
+
+7. Tailwind CSS y componentes de botón:
+
+- Se instaló Tailwind CSS y su CLI en `nocturna/`; el CSS de entrada importa Tailwind y define los colores, fuentes y sombras de Rueda Nocturna.
+
+- La CLI compila `src/input.css` como `src/output.css` y observa los cambios con `npm run watch`.
+
+- En `output.css` aparece `.bg-fondo-principal`, porque la clase está usada en `index.html` y Tailwind genera las utilidades detectadas en los archivos fuente.
+
+- No aparece `.bg-pink-500`, porque no se usa en el HTML ni en el CSS fuente. Tailwind genera utilidades bajo demanda en lugar de incluir todo el catálogo, reduciendo el CSS final.
+
+- Los botones principal, secundario y de contorno tienen estados `hover` y `focus-visible`; el anillo visible reemplaza el contorno nativo al recibir foco por teclado.
+
 
 
 

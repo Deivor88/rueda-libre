@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre Rueda Nocturna, una experiencia para los amantes de la bicicleta y la aventura en Medellín.">
+    <title>Rueda Nocturna | Rueda Libre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/output.css">
+</head>
+<body class="flex min-h-screen flex-col bg-fondo-principal font-body text-claro-hielo antialiased selection:bg-azul-suave selection:text-fondo-principal">
+    <header class="sticky top-0 z-10 flex items-center justify-between border-b border-azul-verdoso/40 bg-azul-profundo/90 p-4 shadow-glow-teal backdrop-blur-md md:px-6">
+        <a href="../index.html" class="flex items-center gap-3 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta focus-visible:ring-offset-4 focus-visible:ring-offset-azul-profundo">
+            <img src="../img/logo_nocturno.png" alt="" class="h-14 w-14 rounded-full object-cover shadow-glow-blue">
+            <span class="flex flex-col">
+                <span class="font-heading text-xl font-extrabold tracking-wider">RUEDA NOCTURNA</span>
+                <span class="text-xs font-semibold uppercase tracking-widest text-azul-suave">Rueda Libre</span>
+            </span>
+        </a>
+        <nav class="font-heading text-sm font-semibold">
+            <a href="../index.html" class="rounded text-claro-hielo/80 transition-colors hover:text-azul-suave focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-suave focus-visible:ring-offset-4 focus-visible:ring-offset-azul-profundo">
+                <span aria-hidden="true">☼</span> Rueda Libre
+            </a>
+        </nav>
+    </header>
+
+    <main class="flex flex-1 flex-col items-center justify-center px-6 py-16 text-center">
+        <section class="w-full max-w-3xl" aria-labelledby="titulo-principal">
+            <p class="mb-4 font-heading text-sm font-bold uppercase tracking-[0.25em] text-azul-suave">Medellín sobre dos ruedas</p>
+            <h1 id="titulo-principal" class="font-heading text-4xl font-extrabold leading-tight sm:text-5xl">Rueda Nocturna</h1>
+            <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-claro-hielo/85">
+                Estamos trabajando en algo emocionante para los amantes de la bicicleta y la aventura nocturna. Mantente atento para descubrir nuestra próxima experiencia en Medellín.
+            </p>
+
+            <div class="mt-10 flex flex-wrap justify-center gap-4" aria-label="Variantes de botones">
+                <button type="button" class="btn btn-primary">
+                    Suscríbete para Actualizaciones
+                </button>
+                <button type="button" class="btn btn-secondary">
+                    Secundario
+                </button>
+                <button type="button" class="btn btn-outline">
+                    Contorno
+                </button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

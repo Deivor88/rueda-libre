@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --color-fondo-principal: #0a1216;
+  --color-azul-profundo: #123040;
+  --color-azul-verdoso: #1f5566;
+  --color-azul-suave: #6ba4b8;
+  --color-claro-hielo: #d7f0f5;
+  --color-naranja-pedal: #f39a2b;
+  --color-verde-ruta: #2ecc71;
+
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+
+  --shadow-glow-teal: 0 0 25px rgb(31 85 102 / 40%);
+  --shadow-glow-blue: 0 0 25px rgb(107 164 184 / 30%);
+  --shadow-glow-orange: 0 0 20px rgb(243 154 43 / 35%);
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-fondo-principal;
+  }
+
+  .btn-primary {
+    @apply bg-naranja-pedal text-fondo-principal shadow-glow-orange hover:bg-naranja-pedal/85 focus-visible:ring-claro-hielo;
+  }
+
+  .btn-secondary {
+    @apply bg-azul-verdoso text-claro-hielo hover:bg-azul-suave hover:text-fondo-principal focus-visible:ring-claro-hielo;
+  }
+
+  .btn-outline {
+    @apply border-2 border-azul-suave text-claro-hielo hover:border-naranja-pedal hover:bg-naranja-pedal hover:text-fondo-principal focus-visible:ring-claro-hielo;
+  }
+}
+
+@source "../index.html";
