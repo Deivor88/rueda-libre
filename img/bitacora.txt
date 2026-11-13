@@ -669,6 +669,29 @@ Comandos ejecutados para control de versiones:
 
 
 
+---
+
+9. Auditoría responsive mobile-first:
+
+Hallazgos observados a 360 px antes del ajuste:
+
+- Los enlaces de navegación seguían visibles junto al botón "Inscríbete"; el encabezado terminaba en tres franjas (marca, enlaces y botón) y se veía congestionado.
+
+- El título principal de 36 px ocupaba tres líneas y la separación de 80 px entre secciones, junto con 64 px de relleno vertical, hacía la página innecesariamente larga en celular.
+
+- No había desbordamiento horizontal: las tarjetas, los botones de reserva, el formulario y el pie cabían en el ancho disponible. Rutas, pasos, campos y pie ya se apilaban en una columna.
+
+Pruebas en modo dispositivo después del ajuste:
+
+| Ancho | Encabezado | Rutas | Pasos | Campos del formulario | Pie | Desbordamiento horizontal |
+|---|---|---:|---:|---:|---:|---|
+| 360 px | Apilado; enlaces ocultos y botón visible | 1 columna | 1 columna | 1 columna | 1 columna | No |
+| 768 px | En fila; navegación visible | 2 columnas | 2 columnas | 2 columnas | 3 bloques | No |
+| 1024 px | En fila; navegación visible | 3 columnas | 4 columnas | 2 columnas | 3 bloques | No |
+| 1280 px | En fila; navegación visible | 3 columnas | 4 columnas | 2 columnas | 3 bloques | No |
+
+- Los cambios de tipografía y espaciado son progresivos: base móvil, ajustes desde `sm:` y composiciones amplias desde `lg:`. El encabezado pasa a una fila desde `md:`.
+
 
 
 
