@@ -696,6 +696,31 @@ Pruebas en modo dispositivo después del ajuste:
 
 
 
+---
+
+10. Tema de marca y modo oscuro:
+
+- Se definieron en `nocturna/src/input.css` los seis colores de marca: Azul Verdoso `#16495B`, Crema Claro `#FAF2C9`, Verde Ruta `#1E7A4F`, Naranja Pedal `#F39A2B`, Gris Asfalto `#5B6470` y Amarillo Farol `#FFD166`. Blanco `#FFFFFF` y Texto Oscuro `#12242D` se usan como neutros de apoyo.
+
+- Las familias del tema son Montserrat para encabezados y Open Sans para texto. Las dos páginas cargan ambas familias desde Google Fonts.
+
+- La landing y `componentes.html` usan la paleta de marca. El tema claro utiliza Crema Claro, Blanco, Azul Verdoso y Texto Oscuro; `dark:` usa Azul Noche, Azul Verdoso, Crema Claro y Amarillo Farol cuando el sistema prefiere el modo oscuro.
+
+- Botones, tarjetas, alertas y campos recibieron estilos claros y variantes oscuras. El botón principal usa Amarillo Farol con Texto Oscuro; las tarjetas cambian de Blanco a Azul Verdoso y los campos de Blanco a Azul Noche.
+
+- Se emuló `prefers-color-scheme: dark` en el navegador para revisar la landing y `componentes.html`; se confirmaron los fondos oscuros, textos claros, tarjetas, alertas y campos. También se verificó el tema claro.
+
+Contraste verificado con la fórmula WCAG de luminancia relativa (AA para texto normal: mínimo 4.5:1):
+
+| Texto | Fondo | Ratio | Resultado / ajuste |
+|---|---|---:|---|
+| Verde Ruta `#1E7A4F` | Azul Noche `#12242D` | 3.00:1 | No cumple; en oscuro se cambia el texto de acento a Amarillo Farol. |
+| Amarillo Farol `#FFD166` | Azul Noche `#12242D` | 11.07:1 | Cumple. |
+| Amarillo Farol `#FFD166` | Azul Verdoso `#16495B` | 6.81:1 | Cumple; se usa en tarjetas oscuras y etiquetas. |
+| Azul Verdoso `#16495B` | Crema Claro `#FAF2C9` | 8.70:1 | Cumple. |
+| Gris Asfalto `#5B6470` | Crema Claro `#FAF2C9` | 5.31:1 | Cumple. |
+| Verde Ruta `#1E7A4F` | Crema con fondo Verde Ruta al 10% | 4.14:1 | No cumple; el título de éxito usa Azul Verdoso en claro y Amarillo Farol en oscuro. |
+| Naranja Pedal `#F39A2B` | Crema Claro `#FAF2C9` | 1.97:1 | No cumple como texto; se conserva como fondo/acento con Texto Oscuro. |
 
 
 

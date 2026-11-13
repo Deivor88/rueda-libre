@@ -4,41 +4,66 @@
   --spacing: 0.25rem;
   --radius-component: 0.75rem;
 
-  --color-fondo-principal: #0a1216;
-  --color-azul-profundo: #123040;
-  --color-azul-verdoso: #1f5566;
-  --color-azul-suave: #6ba4b8;
-  --color-claro-hielo: #d7f0f5;
-  --color-naranja-pedal: #f39a2b;
-  --color-verde-ruta: #2ecc71;
+  --color-azul-verdoso: #16495B;
+  --color-crema-claro: #FAF2C9;
+  --color-verde-ruta: #1E7A4F;
+  --color-naranja-pedal: #F39A2B;
+  --color-gris-asfalto: #5B6470;
+  --color-amarillo-farol: #FFD166;
+
+  --color-blanco: #FFFFFF;
+  --color-texto-oscuro: #12242D;
 
   --font-heading: "Montserrat", sans-serif;
   --font-body: "Open Sans", sans-serif;
 
-  --shadow-glow-teal: 0 0 25px rgb(31 85 102 / 40%);
-  --shadow-glow-blue: 0 0 25px rgb(107 164 184 / 30%);
-  --shadow-glow-orange: 0 0 20px rgb(243 154 43 / 35%);
+  --shadow-glow-teal: 0 0 25px rgb(22 73 91 / 24%);
+  --shadow-glow-farol: 0 0 20px rgb(255 209 102 / 30%);
 }
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center rounded-component px-6 py-3 font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-fondo-principal;
+    @apply inline-flex items-center justify-center rounded-component px-6 py-3 font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-crema-claro;
+  }
+
+  @variant dark {
+    .btn {
+      @apply focus-visible:ring-offset-texto-oscuro;
+    }
   }
 
   .btn-primary {
-    @apply bg-naranja-pedal text-fondo-principal shadow-glow-orange hover:bg-naranja-pedal/85 focus-visible:ring-claro-hielo;
+    @apply bg-amarillo-farol text-texto-oscuro shadow-glow-farol hover:bg-naranja-pedal focus-visible:ring-azul-verdoso;
   }
 
   .btn-secondary {
-    @apply bg-azul-verdoso text-claro-hielo hover:bg-azul-suave hover:text-fondo-principal focus-visible:ring-claro-hielo;
+    @apply bg-azul-verdoso text-crema-claro hover:bg-verde-ruta focus-visible:ring-azul-verdoso;
+  }
+
+  @variant dark {
+    .btn-secondary {
+      @apply hover:bg-amarillo-farol hover:text-texto-oscuro focus-visible:ring-amarillo-farol;
+    }
   }
 
   .btn-outline {
-    @apply border-2 border-azul-suave text-claro-hielo hover:border-naranja-pedal hover:bg-naranja-pedal hover:text-fondo-principal focus-visible:ring-claro-hielo;
+    @apply border-2 border-azul-verdoso text-azul-verdoso hover:border-naranja-pedal hover:bg-naranja-pedal hover:text-texto-oscuro focus-visible:ring-azul-verdoso;
+  }
+
+  @variant dark {
+    .btn-outline {
+      @apply border-crema-claro text-crema-claro focus-visible:ring-amarillo-farol;
+    }
   }
 
   .card {
-    @apply overflow-hidden rounded-component border border-azul-verdoso/50 bg-azul-profundo shadow-glow-teal transition-[border-color,box-shadow] duration-300 hover:border-azul-suave hover:shadow-glow-blue;
+    @apply overflow-hidden rounded-component border border-gris-asfalto/20 bg-blanco shadow-glow-teal transition-[border-color,box-shadow] duration-300 hover:border-azul-verdoso hover:shadow-glow-farol;
+  }
+
+  @variant dark {
+    .card {
+      @apply border-azul-verdoso bg-azul-verdoso hover:border-amarillo-farol;
+    }
   }
 
   .alert {
@@ -46,7 +71,7 @@
   }
 
   .alert-info {
-    @apply border-azul-suave bg-azul-suave/10;
+    @apply border-azul-verdoso bg-azul-verdoso/10;
   }
 
   .alert-success {
@@ -57,8 +82,22 @@
     @apply border-naranja-pedal bg-naranja-pedal/10;
   }
 
+  @variant dark {
+    .alert-info,
+    .alert-success,
+    .alert-warning {
+      @apply border-amarillo-farol bg-azul-verdoso;
+    }
+  }
+
   .input {
-    @apply w-full rounded-component border border-azul-verdoso bg-fondo-principal px-4 py-3 text-claro-hielo placeholder:text-claro-hielo/45 transition-colors focus-visible:border-azul-suave focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-suave focus-visible:ring-offset-2 focus-visible:ring-offset-fondo-principal;
+    @apply w-full rounded-component border border-gris-asfalto bg-blanco px-4 py-3 text-texto-oscuro placeholder:text-gris-asfalto transition-colors focus-visible:border-azul-verdoso focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-verdoso focus-visible:ring-offset-2 focus-visible:ring-offset-crema-claro;
+  }
+
+  @variant dark {
+    .input {
+      @apply border-azul-verdoso bg-texto-oscuro text-crema-claro placeholder:text-crema-claro/70 focus-visible:border-amarillo-farol focus-visible:ring-amarillo-farol focus-visible:ring-offset-azul-verdoso;
+    }
   }
 }
 
