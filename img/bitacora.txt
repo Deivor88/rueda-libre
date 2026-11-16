@@ -818,5 +818,20 @@ Validación:
 
 Cronómetro de 40 minutos: inicio 13:03:29; fin 13:13:49; tiempo real 00:10:20.
 
+---
+
+14. Planes Rueda Nocturna:
+
+- Se añadió la sección de planes con diseño responsive: una columna en móvil y tres desde `lg`; las cards mantienen la misma altura, ancho y relleno.
+- El plan Pareja se destaca con borde amarillo más grueso, fondo diferenciado y etiqueta “Más elegido”, sin escalar ni desplazar las demás cards. Los botones quedan al final y los beneficios se distribuyen en columna con separación uniforme.
+- Se añadió el enlace “Planes” a la navegación principal y se regeneraron los estilos Tailwind.
+
+Validación:
+
+- `npm.cmd run build` en `nocturna` finalizó correctamente.
+- En el navegador se comprobaron tres columnas a 1440 px, una columna a 390 px, anchos y rellenos idénticos entre cards y ausencia de desbordamiento horizontal en móvil.
+- Se verificaron alturas iguales en escritorio, el fondo y borde del plan destacado en modo claro y oscuro, y el contraste de la etiqueta.
+
+Cronómetro de 45 minutos: inicio 23:28:46; fin 23:32:27; tiempo real 00:03:41.
 
 

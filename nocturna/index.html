@@ -24,6 +24,7 @@
                 <nav aria-label="Navegación principal" class="hidden items-center md:flex gap-3 lg:gap-5 font-heading text-sm font-semibold">
                     <a href="#inicio" class="rounded-component text-crema-claro/90 transition-colors hover:text-amarillo-farol focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amarillo-farol focus-visible:ring-offset-4 focus-visible:ring-offset-azul-verdoso dark:focus-visible:ring-offset-texto-oscuro">Inicio</a>
                     <a href="#rutas" class="rounded-component text-crema-claro/90 transition-colors hover:text-amarillo-farol focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amarillo-farol focus-visible:ring-offset-4 focus-visible:ring-offset-azul-verdoso dark:focus-visible:ring-offset-texto-oscuro">Rutas</a>
+                    <a href="#planes" class="rounded-component text-crema-claro/90 transition-colors hover:text-amarillo-farol focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amarillo-farol focus-visible:ring-offset-4 focus-visible:ring-offset-azul-verdoso dark:focus-visible:ring-offset-texto-oscuro">Planes</a>
                     <a href="#como-funciona" class="rounded-component text-crema-claro/90 transition-colors hover:text-amarillo-farol focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amarillo-farol focus-visible:ring-offset-4 focus-visible:ring-offset-azul-verdoso dark:focus-visible:ring-offset-texto-oscuro">¿Cómo funciona?</a>
                     <a href="bootstrap.html" class="rounded-component text-crema-claro/90 transition-colors hover:text-amarillo-farol focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amarillo-farol focus-visible:ring-offset-4 focus-visible:ring-offset-azul-verdoso dark:focus-visible:ring-offset-texto-oscuro">Versión Bootstrap</a>
                 </nav>
@@ -152,6 +153,58 @@
                             <a href="../paginas/reservas.html" class="w-full btn-primary">Reservar esta ruta</a>
                         </div>
                     </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="planes" class="scroll-mt-24 md:scroll-mt-32" aria-labelledby="titulo-planes">
+            <div class="mb-6 text-center sm:mb-8">
+                <p class="mb-2 font-heading text-xs font-bold uppercase tracking-[0.2em] text-azul-verdoso dark:text-amarillo-farol sm:text-sm sm:tracking-[0.25em]">Elige cómo rodar</p>
+                <h2 id="titulo-planes" class="font-heading text-2xl font-extrabold sm:text-3xl lg:text-4xl">Planes Rueda Nocturna</h2>
+                <p class="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-gris-asfalto dark:text-crema-claro/80 sm:mt-4 sm:text-base">
+                    Todo lo que necesitas para disfrutar Medellín de noche, con opciones para cada aventura.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 items-stretch gap-5 lg:grid-cols-3 lg:gap-6">
+                <article class="card flex h-full flex-col p-5 sm:p-6">
+                    <h3 class="font-heading text-xl font-bold sm:text-2xl">Individual</h3>
+                    <p class="mt-3 font-heading text-3xl font-extrabold text-azul-verdoso dark:text-amarillo-farol">$55.000</p>
+                    <p class="mt-1 text-sm font-semibold text-gris-asfalto dark:text-crema-claro/75">por persona</p>
+                    <ul class="mt-6 flex flex-col gap-3 text-sm leading-relaxed sm:text-base">
+                        <li class="flex gap-3"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Bicicleta y casco</span></li>
+                        <li class="flex gap-3"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Luces LED y chaleco</span></li>
+                        <li class="flex gap-3"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Guía certificado</span></li>
+                        <li class="flex gap-3"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Hidratación</span></li>
+                    </ul>
+                    <a href="../paginas/reservas.html" class="mt-auto w-full pt-6 btn-outline">Elegir plan</a>
+                </article>
+
+                <article class="card flex h-full flex-col border-4 border-amarillo-farol bg-crema-claro p-5 shadow-glow-farol sm:p-6 dark:border-amarillo-farol dark:bg-texto-oscuro">
+                    <span class="mb-4 self-start rounded-component bg-amarillo-farol px-3 py-1 text-sm font-bold text-texto-oscuro">Más elegido</span>
+                    <h3 class="font-heading text-xl font-bold sm:text-2xl">Pareja</h3>
+                    <p class="mt-3 font-heading text-3xl font-extrabold text-azul-verdoso dark:text-amarillo-farol">$99.000</p>
+                    <p class="mt-1 text-sm font-semibold text-gris-asfalto dark:text-crema-claro/75">las dos personas</p>
+                    <ul class="mt-6 flex flex-col gap-3 text-sm leading-relaxed sm:text-base">
+                        <li class="flex gap-3"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Todo lo del plan Individual</span></li>
+                        <li class="flex gap-3"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Foto del recorrido</span></li>
+                        <li class="flex gap-3"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Snack para dos</span></li>
+                        <li class="flex gap-3"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Prioridad en la ruta</span></li>
+                    </ul>
+                    <a href="../paginas/reservas.html" class="mt-auto w-full pt-6 btn-primary">Elegir plan</a>
+                </article>
+
+                <article class="card flex h-full flex-col p-5 sm:p-6">
+                    <h3 class="font-heading text-xl font-bold sm:text-2xl">Grupo <span class="text-base font-semibold text-gris-asfalto dark:text-crema-claro/75">(4 a 8)</span></h3>
+                    <p class="mt-3 font-heading text-3xl font-extrabold text-azul-verdoso dark:text-amarillo-farol">$45.000</p>
+                    <p class="mt-1 text-sm font-semibold text-gris-asfalto dark:text-crema-claro/75">por persona</p>
+                    <ul class="mt-6 flex flex-col gap-3 text-sm leading-relaxed sm:text-base">
+                        <li class="flex gap-3"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Todo lo del plan Individual</span></li>
+                        <li class="flex gap-3"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Guía exclusivo</span></li>
+                        <li class="flex gap-3"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Horario a elección</span></li>
+                        <li class="flex gap-3"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Fotos del grupo</span></li>
+                    </ul>
+                    <a href="../paginas/reservas.html" class="mt-auto w-full pt-6 btn-outline">Elegir plan</a>
                 </article>
             </div>
         </section>
