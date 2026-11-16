@@ -34,14 +34,15 @@
             <!-- Columna 1 (Formulario - ocupa 2 partes) -->
             <section id="reservas" class="formulario-section">
                 <h2>Formulario de reserva</h2>
-                <form action="../procesar_reserva.php" method="post">
+                <p id="ayuda-reserva">Esta demostración valida los datos en tu navegador, pero no envía ni guarda reservas. Para confirmar una reserva, llámanos al <a href="tel:+571234567890">+57 123 456 7890</a> o escríbenos a <a href="mailto:info@ruedalibre.com">info@ruedalibre.com</a>.</p>
+                <form id="form-reserva" action="#reservas" method="post" aria-describedby="ayuda-reserva">
 
                     <!-- Grupo 1: Tus datos -->
                     <fieldset>
                         <legend>Tus datos</legend>
         
                         <label for="nombre">Nombre completo:</label><br>
-                        <input type="text" id="nombre" name="nombre" required>
+                        <input type="text" id="nombre" name="nombre" autocomplete="name" minlength="3" required>
                         <br>
         
                         <!-- CONTENEDOR DE DOS CAMPOS EN LA MISMA FILA -->
@@ -57,7 +58,7 @@
                         </div>
                         <br>
         
-                        <label for="email">Correo electrónico:</label><br>
+                        <label for="correo">Correo electrónico:</label><br>
                         <input type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
                     </fieldset>
 
@@ -69,6 +70,7 @@
                 
                             <label for="tipo_bici">Tipo de bicicleta:</label><br>
                              <select id="tipo_bici" name="tipo_bici" required>
+                                <option value="" selected disabled>Selecciona una bicicleta</option>
                                 <option value="urbana">Bicicleta Urbana</option>
                                 <option value="montana">Bicicleta de Montaña</option>
                                 <option value="electrica">Bicicleta Eléctrica</option>
@@ -76,24 +78,27 @@
                             <br>
                              <label for="plan">Plan de alquiler:</label><br>
                              <select id="plan" name="plan" required>
+                                <option value="" selected disabled>Selecciona un plan</option>
                                 <option value="hora">Alquiler por Hora</option>
                                 <option value="mediodia">Alquiler por Medio Día (4 horas)</option>
                                 <option value="dia">Alquiler por Día Completo</option>
                             </select>
                             <br>
-                            <label for="recorrido">Recorrido:</label>
-                            <div class="radio-container">
-                                <input type="radio" name="aceptarecorrido" id="aceptar" required>
-                                <label for="aceptar">Acepta recorrido</label>
-                            </div>
-                            <br>
-                            <div class="radio-container">
-                                <input type="radio" name="aceptarecorrido" id="rechazar" required>
-                                <label for="rechazar">Rechaza recorrido</label>
-                            </div>
+                            <fieldset class="radio-group">
+                                <legend>¿Deseas incluir un recorrido?</legend>
+                                <div class="radio-container">
+                                    <input type="radio" name="aceptarecorrido" id="aceptar" value="si" required>
+                                    <label for="aceptar">Sí, incluir recorrido</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="aceptarecorrido" id="rechazar" value="no" required>
+                                    <label for="rechazar">No, gracias</label>
+                                </div>
+                            </fieldset>
                             <br>
                             <label for="recorrido">Tipo de recorrido:</label><br>
                              <select id="recorrido" name="recorrido" required>
+                                <option value="" selected disabled>Selecciona un recorrido</option>
                                 <option value="rio-y-parques12k">Río y Parques (12 km)</option>
                                 <option value="sabores-de-barrio">Sabores de Barrio</option>
                                 <option value="rio-y-parques25k">Río y Parques (25 km)</option>
@@ -104,7 +109,7 @@
                             <input type="number" id="bicicletas" name="bicicletas" min="1" max="6" value="1" required>
                             <br>
                             <label for="fecha">Fecha de reserva:</label><br>
-                            <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-11-31">
+                            <input type="date" id="fecha" name="fecha" required>
                             <br>
                     </fieldset>
 
@@ -114,13 +119,15 @@
                     <fieldset>
                         <legend>Confirmación</legend>
 
-                             <textarea name="comentarios" id="comentarios" rows="4" cols="50" maxlength="300" placeholder="Comentarios adicionales (opcional)"></textarea>
+                             <label for="comentarios">Comentarios adicionales (opcional):</label>
+                             <textarea name="comentarios" id="comentarios" rows="4" cols="50" maxlength="300" placeholder="Escribe aquí tus comentarios"></textarea>
 
                             <div class="terminos-container">
-                                <input type="checkbox" id="terminos" name="terminos" required checked>
+                                <input type="checkbox" id="terminos" name="terminos" required>
                                 <label for="terminos">Acepto los términos, condiciones y políticas de privacidad</label>
                             </div>
-                             <button type="submit" class="btn-cta">Confirmar Alquiler</button>
+                            <p id="resultado-reserva" class="form-feedback" role="status" aria-live="polite" hidden></p>
+                             <button type="submit" class="btn-cta">Validar reserva</button>
                     </fieldset>
 
                 </form>
@@ -160,6 +167,6 @@
         <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
     </footer>
     <a class="whatsapp-link" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-    
+    <script src="../js/reservas.js" defer></script>
 </body>
 </html>

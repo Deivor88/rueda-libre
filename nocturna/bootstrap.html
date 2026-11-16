@@ -9,155 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
-    <style>
-        :root {
-            --rl-blue: #16495B;
-            --rl-cream: #FAF2C9;
-            --rl-green: #1E7A4F;
-            --rl-orange: #F39A2B;
-            --rl-gray: #5B6470;
-            --rl-farol: #FFD166;
-            --rl-ink: #12242D;
-            --rl-surface: #FFFFFF;
-            --rl-page: #FAF2C9;
-        }
-
-        body {
-            background: var(--rl-page);
-            color: var(--rl-ink);
-            font-family: "Open Sans", sans-serif;
-        }
-
-        h1, h2, h3, .navbar-brand, .nav-link, .eyebrow {
-            font-family: Montserrat, sans-serif;
-        }
-
-        h1, h2, h3 {
-            color: var(--rl-blue);
-        }
-
-        .site-nav {
-            background: var(--rl-blue);
-        }
-
-        .navbar-brand, .site-nav .nav-link {
-            color: var(--rl-cream);
-        }
-
-        .site-nav .nav-link:hover, .site-nav .nav-link:focus {
-            color: var(--rl-farol);
-        }
-
-        .eyebrow {
-            color: var(--rl-blue);
-            font-size: .8rem;
-            font-weight: 700;
-            letter-spacing: .2em;
-            text-transform: uppercase;
-        }
-
-        .hero-image {
-            min-height: 18rem;
-            object-fit: cover;
-        }
-
-        .route-image {
-            height: 13rem;
-            object-fit: cover;
-        }
-
-        .card {
-            background-color: var(--rl-surface);
-            border-color: rgb(91 100 112 / 20%);
-            color: var(--rl-ink);
-        }
-
-        .route-level {
-            background: rgb(30 122 79 / 10%);
-            color: var(--rl-green);
-        }
-
-        .route-level--medium {
-            background: rgb(22 73 91 / 10%);
-            color: var(--rl-blue);
-        }
-
-        .route-level--advanced {
-            background: rgb(243 154 43 / 15%);
-            color: var(--rl-ink);
-        }
-
-        .btn-primary {
-            --bs-btn-color: var(--rl-ink);
-            --bs-btn-bg: var(--rl-farol);
-            --bs-btn-border-color: var(--rl-farol);
-            --bs-btn-hover-color: var(--rl-ink);
-            --bs-btn-hover-bg: var(--rl-orange);
-            --bs-btn-hover-border-color: var(--rl-orange);
-            --bs-btn-active-color: var(--rl-ink);
-            --bs-btn-active-bg: var(--rl-orange);
-            --bs-btn-active-border-color: var(--rl-orange);
-        }
-
-        .btn-outline-brand {
-            --bs-btn-color: var(--rl-blue);
-            --bs-btn-border-color: var(--rl-blue);
-            --bs-btn-hover-color: var(--rl-ink);
-            --bs-btn-hover-bg: var(--rl-orange);
-            --bs-btn-hover-border-color: var(--rl-orange);
-            --bs-btn-active-color: var(--rl-ink);
-        }
-
-        .form-control, .form-select {
-            border-color: var(--rl-gray);
-        }
-
-        :focus-visible {
-            outline: 3px solid var(--rl-orange);
-            outline-offset: 3px;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                color-scheme: dark;
-                --rl-page: #12242D;
-                --rl-ink: #FAF2C9;
-                --rl-surface: #16495B;
-                --rl-blue: #FFD166;
-                --bs-body-bg: #12242D;
-                --bs-body-color: #FAF2C9;
-                --bs-secondary-color: rgb(250 242 201 / 75%);
-            }
-
-            .site-nav {
-                background: #12242D;
-            }
-
-            .card {
-                border-color: #16495B;
-            }
-
-            .route-level, .route-level--medium, .route-level--advanced {
-                background: #16495B;
-                color: #FFD166;
-            }
-
-            .btn-outline-brand {
-                --bs-btn-color: var(--rl-cream);
-                --bs-btn-border-color: var(--rl-cream);
-                --bs-btn-hover-color: var(--rl-ink);
-            }
-
-            .form-control, .form-select {
-                background-color: #12242D;
-                color: #FAF2C9;
-            }
-
-            .form-control::placeholder {
-                color: rgb(250 242 201 / 70%);
-            }
-        }
-    </style>
+    <link href="src/bootstrap.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -208,7 +60,7 @@
             <div class="text-center mb-4">
                 <p class="eyebrow mb-2">Explora Medellín de noche</p>
                 <h2 class="display-6 fw-bold">Rutas</h2>
-                <p class="mx-auto mt-3" style="max-width: 42rem">Todas salen de la sede de Rueda Libre e incluyen bicicleta, casco, luces LED, chaleco reflectivo y guía.</p>
+                <p class="route-intro mx-auto mt-3">Todas salen de la sede de Rueda Libre e incluyen bicicleta, casco, luces LED, chaleco reflectivo y guía.</p>
             </div>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
                 <div class="col">
@@ -314,14 +166,14 @@
                     <div class="col-lg-4">
                         <p class="eyebrow mb-2">Tu próxima aventura</p>
                         <h2 class="display-6 fw-bold">Inscríbete</h2>
-                        <p>Completa tus datos para reservar tu lugar en una de nuestras rutas nocturnas. ¡Nos vemos sobre ruedas!</p>
+                        <p id="ayuda-inscripcion">Completa tus datos para validar tu inscripción. Esta demostración no envía ni guarda la información; para confirmar tu reserva, llámanos al <a href="tel:+571234567890">+57 123 456 7890</a> o escríbenos a <a href="mailto:info@ruedalibre.com">info@ruedalibre.com</a>.</p>
                     </div>
                     <div class="col-lg-8">
-                        <form id="form-inscripcion">
+                        <form id="form-inscripcion" method="post" action="#form-inscripcion" aria-describedby="ayuda-inscripcion">
                             <div class="row g-3">
                                 <div class="col-sm-6">
                                     <label class="form-label" for="nombre">Nombre completo</label>
-                                    <input class="form-control" id="nombre" name="nombre" autocomplete="name" placeholder="Tu nombre y apellido" required>
+                                    <input class="form-control" id="nombre" name="nombre" minlength="3" autocomplete="name" placeholder="Tu nombre y apellido" required>
                                 </div>
                                 <div class="col-sm-6">
                                     <label class="form-label" for="correo">Correo electrónico</label>
@@ -329,7 +181,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <label class="form-label" for="telefono">Teléfono</label>
-                                    <input class="form-control" id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="+57 300 123 4567" required>
+                                    <input class="form-control" id="telefono" name="telefono" type="tel" pattern="(\+57\s?)?3[0-9]{2}\s?[0-9]{3}\s?[0-9]{4}" title="Ingresa un celular colombiano de 10 dígitos, con o sin +57." autocomplete="tel" placeholder="+57 300 123 4567" required>
                                 </div>
                                 <div class="col-sm-6">
                                     <label class="form-label" for="ruta">Ruta</label>

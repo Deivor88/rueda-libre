@@ -1,0 +1,151 @@
+:root {
+    --rl-blue: #16495B;
+    --rl-cream: #FAF2C9;
+    --rl-green: #1E7A4F;
+    --rl-orange: #F39A2B;
+    --rl-gray: #5B6470;
+    --rl-farol: #FFD166;
+    --rl-ink: #12242D;
+    --rl-surface: #FFFFFF;
+    --rl-page: #FAF2C9;
+}
+
+body {
+    background: var(--rl-page);
+    color: var(--rl-ink);
+    font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3, .navbar-brand, .nav-link, .eyebrow {
+    font-family: Montserrat, sans-serif;
+}
+
+h1, h2, h3 {
+    color: var(--rl-blue);
+}
+
+.site-nav {
+    background: var(--rl-blue);
+}
+
+.navbar-brand, .site-nav .nav-link {
+    color: var(--rl-cream);
+}
+
+.site-nav .nav-link:hover, .site-nav .nav-link:focus {
+    color: var(--rl-farol);
+}
+
+.eyebrow {
+    color: var(--rl-blue);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+.route-intro {
+    max-width: 42rem;
+}
+
+.hero-image {
+    min-height: 18rem;
+    object-fit: cover;
+}
+
+.route-image {
+    height: 13rem;
+    object-fit: cover;
+}
+
+.card {
+    background-color: var(--rl-surface);
+    border-color: rgb(91 100 112 / 20%);
+    color: var(--rl-ink);
+}
+
+.route-level {
+    background: rgb(30 122 79 / 10%);
+    color: var(--rl-green);
+}
+
+.route-level--medium {
+    background: rgb(22 73 91 / 10%);
+    color: var(--rl-blue);
+}
+
+.route-level--advanced {
+    background: rgb(243 154 43 / 15%);
+    color: var(--rl-ink);
+}
+
+.btn-primary {
+    --bs-btn-color: var(--rl-ink);
+    --bs-btn-bg: var(--rl-farol);
+    --bs-btn-border-color: var(--rl-farol);
+    --bs-btn-hover-color: var(--rl-ink);
+    --bs-btn-hover-bg: var(--rl-orange);
+    --bs-btn-hover-border-color: var(--rl-orange);
+    --bs-btn-active-color: var(--rl-ink);
+    --bs-btn-active-bg: var(--rl-orange);
+    --bs-btn-active-border-color: var(--rl-orange);
+}
+
+.btn-outline-brand {
+    --bs-btn-color: var(--rl-blue);
+    --bs-btn-border-color: var(--rl-blue);
+    --bs-btn-hover-color: var(--rl-ink);
+    --bs-btn-hover-bg: var(--rl-orange);
+    --bs-btn-hover-border-color: var(--rl-orange);
+    --bs-btn-active-color: var(--rl-ink);
+}
+
+.form-control, .form-select {
+    border-color: var(--rl-gray);
+}
+
+:focus-visible {
+    outline: 3px solid var(--rl-orange);
+    outline-offset: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --rl-page: #12242D;
+        --rl-ink: #FAF2C9;
+        --rl-surface: #16495B;
+        --rl-blue: #FFD166;
+        --bs-body-bg: #12242D;
+        --bs-body-color: #FAF2C9;
+        --bs-secondary-color: rgb(250 242 201 / 75%);
+    }
+
+    .site-nav {
+        background: #12242D;
+    }
+
+    .card {
+        border-color: #16495B;
+    }
+
+    .route-level, .route-level--medium, .route-level--advanced {
+        background: #16495B;
+        color: #FFD166;
+    }
+
+    .btn-outline-brand {
+        --bs-btn-color: var(--rl-cream);
+        --bs-btn-border-color: var(--rl-cream);
+        --bs-btn-hover-color: var(--rl-ink);
+    }
+
+    .form-control, .form-select {
+        background-color: #12242D;
+        color: #FAF2C9;
+    }
+
+    .form-control::placeholder {
+        color: rgb(250 242 201 / 70%);
+    }
+}

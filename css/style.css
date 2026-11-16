@@ -248,6 +248,10 @@ article {
     margin-bottom: 2rem;
 }
 
+.spaced-section {
+    margin-bottom: 2rem;
+}
+
 section {
     padding: 2rem;
     border: 1px solid rgba(91, 100, 112, 0.1);
@@ -405,6 +409,20 @@ fieldset {
     border: 2px solid rgba(29, 78, 92, 0.2);
     border-radius: 8px;
     background-color: var(--blanco);
+}
+
+.radio-group {
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.form-feedback {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-left: 4px solid var(--azul-verdoso);
+    border-radius: 8px;
+    background-color: rgba(22, 73, 91, 0.1);
+    color: var(--texto-oscuro);
 }
 
 legend {
